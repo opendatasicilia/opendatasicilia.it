@@ -6,3 +6,15 @@ Benvenute/i
 - [discussioni](https://github.com/opendatasicilia/opendatasicilia.it/discussions)
 - [issue](https://github.com/opendatasicilia/opendatasicilia.it/issues)
 - [progetto](https://github.com/orgs/opendatasicilia/projects/3/views/9)
+
+## Istruzioni per l'uso
+- Modificare il file /etc/hosts per connettersi al nuovo sito Wordpress
+- Clonare il repository
+- Installare Node, e gatsby-cli come illustrato [qui](https://github.com/opendatasicilia/opendatasicilia.it/discussions/29)
+- Lanciare il comando `npm install` per scaricare le dipendenze
+- Creiamo un file all'interno della root chiamato `.env.development` con i seguenti contenuti:
+```
+NODE_TLS_REJECT_UNAUTHORIZED=0
+WP_GRAPH_API=https://opendatasicilia.it/graphql
+```
+- Lanciamo `gatsby develop`
