@@ -5,10 +5,11 @@ import Blog from "../components/Blog"
 import Logo2 from "../assets/images/opendatasicilia-logo2.png"
 import IntroSVG from "../assets/images/intro.svg"
 
+import lorem from "../data/lorem"
+
 export default function Index({data}){
 
   const posts = data.allWpPost.nodes
-  const lorem = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sodales tincidunt risus vel tempus. Nunc lobortis faucibus enim in iaculis. Nulla urna metus, gravida faucibus varius eu, imperdiet et leo. Proin finibus, lectus convallis consequat posuere, quam ex rhoncus lectus, consequat hendrerit odio velit nec purus."
   const cards = ['Unisciti', 'Collabora', 'Pubblica']
   
   return(

@@ -49,9 +49,6 @@ button.secondary{
 .wrapperGrad{
     background: transparent linear-gradient(180deg, #FFFFFF 0%, #FFFFFF 16%, #006D77 200%) 0% 0% no-repeat padding-box;
 }
-.card{
-    min-height: 500px;
-}
 a.post:hover{
     text-decoration: none;
 }
@@ -64,6 +61,10 @@ a.post:hover h2{
 
 .hamburger-react{
     display:none;
+}
+.rounded-4{
+    border-radius: 17px;
+    border: 1px solid #006D774D;
 }
 
 .mobile-menu{
