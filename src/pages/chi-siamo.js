@@ -17,7 +17,7 @@ export default function ChiSiamo(){
                 <h1 className="mb-3">Unisciti a noi</h1>
                 <div className="row">
                     {
-                        socials.splice(0,4).map((social, i) => (
+                        socials[0].map((social, i) => (
                             <div className="col-12 col-lg-6 mb-3" key={i}>
                                 <div className="p-4 card rounded-4">
                                     <div className="row">
@@ -44,7 +44,7 @@ export default function ChiSiamo(){
                 <h1 className="mb-3">Seguici</h1>
                 <div className="row mb-5">
                     {
-                        socials.splice(0,2).map((social, i) => (
+                        socials[1].map((social, i) => (
                             <div className="col-12 col-lg-6 mb-3" key={i}>
                                 <div className="p-4 card rounded-4">
                                     <div className="row">
