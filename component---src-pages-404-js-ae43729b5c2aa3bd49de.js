@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkopendatasicilia_it=self.webpackChunkopendatasicilia_it||[]).push([[883],{9616:function(n,e,t){t.r(e),t.d(e,{default:function(){return u}});var i=t(7294);function u(){return i.useEffect((function(){var n;return n=setInterval((function(){"undefined"!=typeof window&&(window.location="/")}),1),function(){return n?clearInterval(n):null}}),[]),i.createElement("div",null)}}}]);
+//# sourceMappingURL=component---src-pages-404-js-ae43729b5c2aa3bd49de.js.map
