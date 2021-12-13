@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkopendatasicilia_it=self.webpackChunkopendatasicilia_it||[]).push([[571],{8671:function(e,t,n){n.r(t),n.d(t,{default:function(){return c}});var a=n(7294),i=n(1422);function c(){var e="Progetti";return a.createElement(i.Z,{title:e},a.createElement("div",{className:"container"},a.createElement("h1",null,e)))}}}]);
