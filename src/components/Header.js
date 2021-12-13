@@ -21,10 +21,6 @@ export default function Header(){
         {
             name: 'Cose nostre',
             url: '/cose-nostre'
-        },
-        {
-            name: 'Login',
-            url: '/login'
         }
     ]
 

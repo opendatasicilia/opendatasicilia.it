@@ -13,6 +13,9 @@ exports.createPages = ({ graphql, actions }) => {
         }
     `)
     .then(result => {
+        if(result.errors){
+            console.log(result.errors);
+        }
         result.data.allWpPost.nodes.forEach(node => {
             createPage({
                 path: `/${node.slug}`,
@@ -24,7 +27,5 @@ exports.createPages = ({ graphql, actions }) => {
         })
     })
  
-    return Promise.all(
-        [posts]
-    )
+    return Promise.all([posts])
 };
