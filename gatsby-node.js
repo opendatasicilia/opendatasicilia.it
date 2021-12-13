@@ -18,7 +18,7 @@ exports.createPages = ({ graphql, actions }) => {
         }
         result.data.allWpPost.nodes.forEach(node => {
             createPage({
-                path: `/${node.slug}`,
+                path: `/blog/${node.slug}`,
                 component: path.resolve(`./src/templates/post.js`),
                 context: {
                     slug: node.slug

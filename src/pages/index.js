@@ -33,7 +33,7 @@ export default function Index({data}){
             {
               cards.map((card, i) => (
                 <div className="col-12 col-lg-4 mb-3" key={i}>
-                  <div className="text-center p-4 card">
+                  <div className="text-center p-4 card rounded-4">
                     <h1 className="text-muted" style={{fontSize:'128px'}}>?</h1>
                     <h1>{card}</h1>
                     <p>{lorem}</p>

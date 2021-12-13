@@ -4,6 +4,7 @@ import {
     FaRegEnvelope as mailicon,
     FaTwitter as twicon,
     FaGithub as ghicon,
+    FaYoutube as yticon
 } from 'react-icons/fa'
 
 const socials = [
@@ -18,11 +19,6 @@ const socials = [
         icon: mailicon
     },
     {
-        name: "Twitter",
-        url: "https://twitter.com/opendatasicilia",
-        icon: twicon
-    },
-    {
         name: "Facebook group",
         url: "https://www.facebook.com/groups/opendatasicilia/",
         icon: fbicon
@@ -31,6 +27,16 @@ const socials = [
         name: "GitHub",
         url: "https://github.com/opendatasicilia",
         icon: ghicon
+    },
+    {
+        name: "Twitter",
+        url: "https://twitter.com/opendatasicilia",
+        icon: twicon
+    },
+    {
+        name: "YouTube",
+        url: "https://www.youtube.com/channel/UCyojAonwV6vNNJYAqw4JkTQ",
+        icon: yticon
     }
 ]
 

@@ -9,7 +9,7 @@ export default function Blog({data}){
     <div className="pt-5 pb-5">
         {
             data.map((post, i) => (
-                <Link className="text-black post" to={`../${post.slug}`} key={i}>
+                <Link className="text-black post" to={`../blog/${post.slug}`} key={i}>
                     <div style={{border:'1px solid #dfdfdf'}} className="row rounded mb-3 p-4">
                         
                         <div className="col-12 col-md-4">
