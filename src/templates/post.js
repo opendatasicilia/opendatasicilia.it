@@ -9,11 +9,11 @@ export default function Post({ data }) {
     const date = format(new Date(post.date), "dd/MM/yyyy")
     return (
         <Layout title={post.title}>
-            <div className="container">
+            <div className="container mb-5">
                 <h1>{post.title}</h1>
                 <h2 style={{fontWeight:'300'}}>Di <b>{post.author.node.name}</b> | Pubblicato {date}</h2>
                 {post.featuredImage && <GatsbyImage className="rounded pt-2 pb-2" image={post.featuredImage.node.localFile.childImageSharp.gatsbyImageData} alt={post.title}/>}
-                <div className="pt-4 pb-4" dangerouslySetInnerHTML={{ __html: post.content }} />
+                <div className="pt-4 pb-5" dangerouslySetInnerHTML={{ __html: post.content }} />
             </div>
         </Layout>
     )

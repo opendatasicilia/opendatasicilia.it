@@ -35,7 +35,7 @@ export default function Header(){
                     {
                         menu.map((item, i) => (
                             <Link to={item.url} key={i}>
-                                <span className="menu-item m-3 text-black h5">{item.name}</span>
+                                <span className="menu-item m-3 text-black h5 fw-light">{item.name}</span>
                             </Link>
                         ))
                     }

@@ -19,7 +19,7 @@ export default function ChiSiamo(){
                     {
                         socials[0].map((social, i) => (
                             <div className="col-12 col-lg-6 mb-3" key={i}>
-                                <div className="p-4 card rounded-4">
+                                <div style={{border: '1px solid #006D774D'}} className="p-4 card rounded-4">
                                     <div className="row">
                                         <div className="col-2 col-xl-1">
                                             <social.icon size={36} color={'teal'}/>
@@ -46,7 +46,7 @@ export default function ChiSiamo(){
                     {
                         socials[1].map((social, i) => (
                             <div className="col-12 col-lg-6 mb-3" key={i}>
-                                <div className="p-4 card rounded-4">
+                                <div style={{border: '1px solid #006D774D'}} className="p-4 card rounded-4">
                                     <div className="row">
                                         <div className="col-2 col-xl-1">
                                             <social.icon size={36} color={'teal'}/>

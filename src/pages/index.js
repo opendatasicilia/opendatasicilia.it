@@ -2,7 +2,6 @@ import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/Layout"
 import Blog from "../components/Blog"
-import Logo2 from "../assets/images/opendatasicilia-logo2.png"
 import IntroSVG from "../assets/images/intro.svg"
 
 import lorem from "../data/lorem"
@@ -19,10 +18,12 @@ export default function Index({data}){
           
           <div className="row">
             <div className="col-12 col-lg-6 align-self-center mb-5 mb-lg-0 text-center text-lg-start">
-              <img className="mb-3" style={{height:'300px'}}src={Logo2} alt="logo"/>
-              <p>{lorem}</p>
-              <button className="primary me-4">Unisciti</button>
-              <button className="secondary">Scopri di piu</button>
+              <h1 className="mx-auto mx-lg-0 text-uppercase logotype pb-3">
+                Open Data Sicilia
+              </h1>
+              <p className="pb-3 fw-light">{lorem}</p>
+              <button className="primary me-4 rounded-4">Unisciti</button>
+              <button className="secondary rounded-4">Scopri di piu</button>
             </div>
             <div className="col-12 col-lg-6">
               <img src={IntroSVG} alt="Intro" /> 
@@ -36,7 +37,7 @@ export default function Index({data}){
                   <div className="text-center p-4 card rounded-4">
                     <h1 className="text-muted" style={{fontSize:'128px'}}>?</h1>
                     <h1>{card}</h1>
-                    <p>{lorem}</p>
+                    <p className="fw-light">{lorem}</p>
                   </div>
                 </div>
               ))
@@ -46,7 +47,7 @@ export default function Index({data}){
         </div>
       </div>
       <div className="container pt-5">
-        <h1 style={{fontSize:'64px'}}>
+        <h1 style={{fontSize:'60px'}}>
           Ultimi post
         </h1>
         <Blog data={posts}/>
