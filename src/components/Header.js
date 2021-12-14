@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from 'gatsby'
 import { Squash as Hamburger } from 'hamburger-react'
-import Logo from "../assets/images/opendatasicilia-logo.png"
+import Logo from "../assets/images/opendatasicilia-logo.svg"
 
 export default function Header(){
     const [isOpen, setOpen] = useState(false)
