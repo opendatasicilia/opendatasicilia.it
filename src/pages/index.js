@@ -1,15 +1,15 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { Link, graphql } from "gatsby"
 import Layout from "../components/Layout"
 import Blog from "../components/Blog"
 import IntroSVG from "../assets/images/intro.svg"
 
 import lorem from "../data/lorem"
+import cards from "../data/cards"
 
 export default function Index({data}){
 
   const posts = data.allWpPost.nodes
-  const cards = ['Unisciti', 'Collabora', 'Pubblica']
   
   return(
     <Layout>
@@ -18,12 +18,18 @@ export default function Index({data}){
           
           <div className="row">
             <div className="col-12 col-lg-6 align-self-center mb-5 mb-lg-0 text-center text-lg-start">
-              <h1 className="mx-auto mx-lg-0 text-uppercase logotype pb-3">
+              <h1 className="mx-auto mx-lg-0 text-uppercase logotype pb-3 fw-bold">
                 Open Data Sicilia
               </h1>
               <p className="pb-3 fw-light">{lorem}</p>
-              <button className="primary me-4 rounded-4">Unisciti</button>
-              <button className="secondary rounded-4">Scopri di piu</button>
+              <Link to='/chi-siamo'>
+                <button className="primary me-4 rounded-4">
+                  Unisciti
+                </button>
+              </Link>
+              <button className="secondary rounded-4">
+                Scopri di piu
+              </button>
             </div>
             <div className="col-12 col-lg-6">
               <img src={IntroSVG} alt="Intro" /> 
@@ -35,9 +41,13 @@ export default function Index({data}){
               cards.map((card, i) => (
                 <div className="col-12 col-lg-4 mb-3" key={i}>
                   <div className="text-center p-4 card rounded-4">
-                    <h1 className="text-muted" style={{fontSize:'128px'}}>?</h1>
-                    <h1>{card}</h1>
-                    <p className="fw-light">{lorem}</p>
+                    <img className="mx-auto m-5 mh-100" src={card.image} alt={card.title}/>
+                    <h1 style={{fontSize:'27px', color:'#3F3D56'}} className="text-uppercase mb-3 fw-bold">
+                      {card.title}
+                    </h1>
+                    <p style={{fontSize:'18px'}}>
+                      {lorem.substring(0,116)}
+                    </p>
                   </div>
                 </div>
               ))
@@ -47,7 +57,7 @@ export default function Index({data}){
         </div>
       </div>
       <div className="container pt-5">
-        <h1 style={{fontSize:'60px'}}>
+        <h1 style={{fontSize:'41px'}}>
           Ultimi post
         </h1>
         <Blog data={posts}/>

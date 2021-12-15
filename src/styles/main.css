@@ -18,8 +18,10 @@ figure{
 
 a{
     text-decoration: none;
+    color: #00A47F;
 }
 a:hover{
+    color: #00A47F;
     text-decoration: underline;
 }
 p.subtitle{
