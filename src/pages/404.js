@@ -2,14 +2,15 @@ import React from "react"
 import Layout from "../components/Layout"
 import Search from "../components/Search"
 import { graphql } from "gatsby"
+import image404 from "../assets/images/404.svg"
 
 export default function NotFound({data}){
 
   return(
       <Layout title="404">
       <div className="container">
-        <div className="row pt-5">
-          <div className="col-12 col-lg-6 align-self-center">
+        <div className="row mb-1">
+          <div className="col-12 col-lg-6 align-self-center text-center text-lg-start order-2 order-lg-1">
             <h1>
               Pagina non trovata
             </h1>
@@ -18,10 +19,8 @@ export default function NotFound({data}){
             </h2>
             <Search data={data}/>
           </div>
-          <div className="col-12 col-lg-6">
-            <h1 style={{color:'#00A47F', fontSize:'281px', textShadow:'6px 0px 0px #00000029', fontWeight:'900'}}>
-              404
-            </h1>
+          <div className="col-12 col-lg-6 text-center order-1 order-lg-2">
+            <img src={image404} className="notfound" alt="404" />
           </div>
         </div>
       </div>
@@ -35,6 +34,7 @@ export const query = graphql`
       nodes {
         title
         slug
+        content
       }
     }
   }

@@ -16,7 +16,7 @@ export default function Search({data}){
     };
     return(
         <>
-        <Select options={options} onChange={handleChange} />
+        <Select placeholder="Cerca..." options={options} onChange={handleChange} />
         </>
     )
 }
