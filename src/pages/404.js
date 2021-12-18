@@ -30,12 +30,9 @@ export default function NotFound({data}){
 
 export const query = graphql`
   query {
-    allWpPost {
-      nodes {
-        title
-        slug
-        content
-      }
+    localSearchPosts {
+      index
+      store
     }
   }
 `
