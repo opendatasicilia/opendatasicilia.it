@@ -10,7 +10,7 @@ export default function Search({data}){
     const store = data.localSearchPosts.store
     const results = useFlexSearch(query, index, store)
 
-    const getExcerpt = useCallback((text, length = 120) => {
+    const highlightText = useCallback((text, length = 120) => {
         // makes it lowercase to be sure to find it
         const regex = new RegExp(`\\b(${query.replace(/<\/?[^>]+(>|$)/g, "").toLowerCase()})\\b`);
         const matchedRegex = text.toLowerCase().match(regex);
@@ -70,15 +70,15 @@ export default function Search({data}){
                 results && results.map((result, i) => (
                     <div style={{border:'1px solid lightgray', padding:'8px', marginBottom:'-1px'}} key={i}>
                         <a href={`../blog/${result.slug}`}>
-                            <h6 className="mb-0">{result.title}</h6>
+                            <h6 className="mb-0" dangerouslySetInnerHTML={{ __html: highlightText(result.title)}} />
                         </a>
                         <div>
                             <small>
-                                Pubblicato da: <b>{result.author}</b>
+                                Pubblicato da: <b dangerouslySetInnerHTML={{ __html: highlightText(result.author)}} />
                             </small>
                         </div>
                         <hr className="m-0"/>
-                        <div className="small mt-2 mb-1" dangerouslySetInnerHTML={{ __html: getExcerpt(result.content) }} />
+                        <div className="small mt-2 mb-1" dangerouslySetInnerHTML={{ __html: highlightText(result.content) }} />
                     </div>
                 ))
             }
