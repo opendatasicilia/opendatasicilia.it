@@ -62,7 +62,7 @@ jobs:
         env:
           NODE_ENV: production
           ENVIRONMENT: ${{ contains(github.ref, 'main') && 'production' || 'staging'}}
-          WP_GRAPH_API: ${{ secrets.WP_GRAPH_API }}
+          GATSBY_WP_GRAPH_API: ${{ secrets.GATSBY_WP_GRAPH_API }}
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@4.1.1
