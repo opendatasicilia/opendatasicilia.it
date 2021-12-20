@@ -9,7 +9,7 @@ module.exports = {
     {
       resolve: "gatsby-source-wordpress",
       options: {
-        url: process.env.WP_GRAPH_API
+        url: process.env.GATSBY_WP_GRAPH_API
       },
       type: {
         MediaItem: {
