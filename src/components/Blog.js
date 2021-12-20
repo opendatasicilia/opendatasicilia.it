@@ -21,7 +21,7 @@ export default function Blog({data}){
                         </div>
                         
                         <div className="col-12 col-md-8 align-self-center">
-                            <h2 style={{color:'#3d3d3d'}}>{post.title}</h2>
+                            <h2>{post.title}</h2>
                             <div dangerouslySetInnerHTML={{ __html: post.excerpt.split('</p>').slice(0, -1) }} />
                         </div>
                     </div>

@@ -66,7 +66,7 @@ module.exports = {
           data.allWpPost.nodes.map((node) => ({
             slug: node.slug,
             title: node.title,
-            content: node.content.replace(/<[^>]+>/g, ''),
+            content: node.content.replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '').replace(/<[^>]+>/g, ''),
             author: node.author.node.name
           })),
       },

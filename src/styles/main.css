@@ -3,9 +3,19 @@
     color:white;
 }
 
-body{
+h1,h2,h3,h4,h5,h6, .subtitle, .menu-item{
     font-family: 'Josefin Sans', sans-serif;
+    color: #3F3D56;
 }
+
+p{
+    font-family: 'Lato', sans-serif;
+}
+
+input{
+    outline: none;
+}
+
 main{
     display: flex;
     flex-direction: column;
@@ -105,7 +115,7 @@ a.post:hover h2{
         display:block;
         z-index: 2;
     }
-    .navbar-nav span{
+    .navbar-nav .menu-item, .searchbar{
         display:none;
     }
 }
@@ -121,11 +131,21 @@ div.sharedaddy{
     border-radius: 6px;
 }
 
-input.searchbar{
+div.search-results{
+    position:absolute;
     width: 100%;
-    height: 50px;
-    border: 1px solid lightgray;
-    transition: .2s;
-    padding: 8px;
-    outline: none;
+    max-height: 80vh;
+    overflow: auto;
+    overflow-x: none;
+    background-color: white;
+    z-index: 1;
+}
+.search-results::-webkit-scrollbar {
+    width: 10px;
+}
+.search-results::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+}
+.search-results::-webkit-scrollbar-thumb {
+    background: grey;
 }
