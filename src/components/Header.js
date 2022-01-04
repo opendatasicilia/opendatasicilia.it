@@ -1,13 +1,14 @@
 import React, { useState } from 'react'
 import { Link } from 'gatsby'
 import { Squash as Hamburger } from 'hamburger-react'
-import { RiSearchLine } from 'react-icons/ri'
+import { RiSearchLine, RiCloseFill } from 'react-icons/ri'
 import Logo from "../assets/images/opendatasicilia-logo.svg"
 import Search from './Search'
 
 export default function Header(){
     const [isOpen, setOpen] = useState(false)
     const [search, setSearch] = useState(false)
+    const SearchIcon = search ? RiCloseFill : RiSearchLine;
     const menu = [
         {
             name: 'Blog',
@@ -36,7 +37,7 @@ export default function Header(){
                     </Link>
                     <div className="navbar-nav">
                         <div className={`search-bar ${search ? 'd-block' : 'd-none'}`}>
-                            <Search/>
+                            <Search isSearching={search}/>
                         </div>
                         <div className={search ? 'd-none' : 'd-block'}>
                             {
@@ -50,7 +51,7 @@ export default function Header(){
                             }
                         </div>
                         <div role="button" style={{zIndex:'2'}} className="menu-item align-self-center" >
-                            <RiSearchLine className="search-icon" size={24} onClick={() => setSearch(!search)}/>
+                            <SearchIcon className="search-icon" size={24} onClick={() => setSearch(!search)}/>
                         </div>
                         <Hamburger size={42} toggled={isOpen} color={isOpen ? 'white' : '#3F3D56'} toggle={setOpen} />
                     </div>

@@ -4,7 +4,7 @@ import { useFlexSearch } from "react-use-flexsearch";
 import truncateStringToWord from "./functions/truncateStringToWord";
 import { renderToString } from "react-dom/server";
 
-export default function Search(){
+export default function Search({...props}){
     const [query, setQuery] = useState('')
     const data = useStaticQuery(graphql`
         query {
@@ -14,6 +14,13 @@ export default function Search(){
             }
         }
     `)
+
+    useEffect(() => {
+        if(!props.isSearching){
+            setQuery('')
+        }
+    },[props.isSearching])
+
     const results = useFlexSearch(query, data.localSearchPosts.index, data.localSearchPosts.store)
 
     useEffect(() => {
