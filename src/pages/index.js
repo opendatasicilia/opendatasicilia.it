@@ -73,6 +73,18 @@ export const query = graphql`
         title
         slug
         excerpt
+        content
+        date
+        author {
+            node {
+              name
+            }
+          }
+        comments {
+          nodes {
+            content
+          }
+        }
         featuredImage {
           node {
             localFile {

@@ -9,7 +9,9 @@ export default function BlogPage({data}){
       <>
         <Layout title="Blog">
           <div className="container">
-            <h1>Tutti i post</h1>
+            <h1 className="fw-bold">
+              Tutti i post
+            </h1>
             <Blog data={posts} />
           </div>
         </Layout>
@@ -24,6 +26,18 @@ export const query = graphql`
         title
         slug
         excerpt
+        content
+        date
+        author {
+            node {
+              name
+            }
+          }
+        comments {
+          nodes {
+            content
+          }
+        }
         featuredImage {
           node {
             localFile {

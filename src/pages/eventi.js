@@ -10,7 +10,9 @@ export default function Eventi({data}){
       <>
         <Layout title={title}>
             <div className="container">
-                <h1>{title}</h1>
+                <h1 className="fw-bold">
+                  {title}
+                </h1>
                 <Blog data={posts} />
             </div>
         </Layout>
@@ -25,6 +27,18 @@ export const query = graphql`
         title
         slug
         excerpt
+        content
+        date
+        author {
+            node {
+              name
+            }
+          }
+        comments {
+          nodes {
+            content
+          }
+        }
         featuredImage {
           node {
             localFile {
