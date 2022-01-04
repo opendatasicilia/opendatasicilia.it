@@ -70,21 +70,7 @@ export const query = graphql`
   query {
     allWpPost(limit: 3) {
       nodes {
-        title
-        slug
-        excerpt
-        content
-        date
-        author {
-            node {
-              name
-            }
-          }
-        comments {
-          nodes {
-            content
-          }
-        }
+        ...Post
         featuredImage {
           node {
             localFile {

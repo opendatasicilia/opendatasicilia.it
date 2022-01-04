@@ -24,21 +24,7 @@ export const query = graphql`
   query {
     allWpPost(filter: {categories: {nodes: {elemMatch: {slug: {eq: "eventi"}}}}}) {
       nodes {
-        title
-        slug
-        excerpt
-        content
-        date
-        author {
-            node {
-              name
-            }
-          }
-        comments {
-          nodes {
-            content
-          }
-        }
+        ...Post
         featuredImage {
           node {
             localFile {

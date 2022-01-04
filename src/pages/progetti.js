@@ -1,19 +1,20 @@
-import React from 'react';
-import { graphql } from "gatsby"
-import Layout from "../components/Layout"
+import React from 'react'
+import { graphql } from 'gatsby'
+import Layout from '../components/Layout'
 import Blog from '../components/Blog'
 
-export default function BlogPage({data}){
+export default function Progetti({data}){
+    const title = "Progetti"
     const posts = data.allWpPost.nodes
     return(
       <>
-        <Layout title="Blog">
-          <div className="container">
-            <h1 className="fw-bold">
-              Tutti i post
-            </h1>
-            <Blog data={posts} />
-          </div>
+        <Layout title={title}>
+            <div className="container">
+                <h1 className="fw-bold">
+                  {title}
+                </h1>
+                <Blog data={posts} />
+            </div>
         </Layout>
       </>
     )
@@ -21,7 +22,7 @@ export default function BlogPage({data}){
 
 export const query = graphql`
   query {
-    allWpPost {
+    allWpPost(filter: {categories: {nodes: {elemMatch: {slug: {eq: "cose-nostre"}}}}}) {
       nodes {
         ...Post
         featuredImage {
