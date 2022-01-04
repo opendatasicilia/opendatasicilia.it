@@ -6,6 +6,7 @@ import Footer from './Footer'
 export default function Layout({children, title}){
     return(
         <>
+            <div id="overlay"/>
             <Helmet>
                 <title>{title ? title + " | Open Data Sicilia" : "Open Data Sicilia"}</title>
                 <link rel="preconnect" href="https://fonts.googleapis.com" />

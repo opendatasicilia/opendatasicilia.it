@@ -14,12 +14,14 @@ export default function NotFound(){
             <h1 className="fw-bold">
               Pagina non trovata
             </h1>
-            <p className="fw-medium" style={{maxWidth:'36ch'}}>
-              Siamo spiacenti, questa pagina non è stata trovata o non esiste. Vuoi provare a cercarla?
-            </p>
-            <div className="d-flex mt-4">
+            <div className="text-center text-lg-start">
+              <p className="fw-medium mx-auto mx-lg-0" style={{maxWidth:'36ch'}}>
+                Siamo spiacenti, questa pagina non è stata trovata o non esiste. Vuoi provare a cercarla?
+              </p>
+            </div>
+            <div className="search-bar w-100 d-flex mt-4">
               <Search/>
-              <div style={{backgroundColor:'teal', marginLeft:'-54px', height:'54px', width:'54px', display:'flex', zIndex:'1', borderRadius:'0px 10px 10px 0px'}}>
+              <div style={{backgroundColor:'teal', marginLeft:'-54px', height:'54px', width:'54px', display:'flex', zIndex:'2', borderRadius:'0px .3rem .3rem 0px'}}>
                 <RiSearchLine className="align-self-center mx-auto" color={'white'} size={54/1.618}/>
               </div>
             </div>

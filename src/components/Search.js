@@ -1,4 +1,4 @@
-import React, {useState, useCallback} from "react";
+import React, {useState, useEffect, useCallback} from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import { useFlexSearch } from "react-use-flexsearch";
 import truncateStringToWord from "./functions/truncateStringToWord";
@@ -16,7 +16,11 @@ export default function Search(){
     `)
     const results = useFlexSearch(query, data.localSearchPosts.index, data.localSearchPosts.store)
 
-    const highlightText = useCallback((text, length = 120) => {
+    useEffect(() => {
+        document.getElementById("overlay").classList.toggle('d-block', query.length >= 1);
+    },[query])
+
+    const highlightText = useCallback((text, length = 96) => {
         // makes it lowercase to be sure to find it
         const regex = new RegExp(`\\b(${query.replace(/<\/?[^>]+(>|$)/g, "").toLowerCase()})\\b`);
         const matchedRegex = text.toLowerCase().match(regex);
@@ -49,38 +53,43 @@ export default function Search(){
     }, [query]);
 
     return(
-        <div style={{position:'relative', width:'100%'}}>
+        <div style={{zIndex:'2'}} className="position-relative w-100">
                 <input
-                    style={results.length > 0 ? {borderRadius:'10px 10px 0px 0px', borderBottom:'none', height:'54px'} : {borderRadius:'10px', display:'flex', height:'54px'}}
-                    className="p-2 border w-100"
-                    placeholder="Cerca"
+                    checked={true}
+                    style={{height:'54px'}}
+                    className="p-3 border rounded-3 w-100"
+                    placeholder="Cerca..."
                     value={query} 
                     onChange={(e) => setQuery(e.target.value)}
                 />
-            <div className="search-results">
             {
-                results.length > 0 && 
-                    <div className="p-2 text-end text-white" style={{backgroundColor:'rgb(0 164 127)'}}>
+            results.length > 0 &&
+                <div style={{zIndex:'3'}} className="search-results border rounded-3 mt-2"> 
+                    <div className="p-3 text-muted bg-light">
                         {results.length} risultati trovati
                     </div>
+                    <ul className="list-unstyled">
+                    {
+                        results.map((result, i) => (
+                            <>
+                                <div className={`border-bottom ${i === 0 ? 'mx-auto' : 'mx-3'}`} />
+                                <a className="text-decoration-none" href={`../blog/${result.slug}`}>
+                                    <li className="p-3 border-0 text-black" key={i}>
+                                            <h6 className="fw-bold" dangerouslySetInnerHTML={{ __html: highlightText(result.title)}} />
+                                            <div>
+                                                <small>
+                                                    Pubblicato da: <b dangerouslySetInnerHTML={{ __html: highlightText(result.author)}} />
+                                                </small>
+                                            </div>
+                                            <p className="small mt-2 mb-1 text-black" dangerouslySetInnerHTML={{ __html: highlightText(result.content) }} />
+                                    </li>
+                                </a>
+                            </>
+                        ))
+                    }
+                    </ul>
+                </div>
             }
-            {
-                results.map((result, i) => (
-                    <div className="p-2 border" key={i}>
-                        <a href={`../blog/${result.slug}`}>
-                            <h6 style={{color:'rgb(0 164 127)'}} className="mb-0 fw-bold" dangerouslySetInnerHTML={{ __html: highlightText(result.title)}} />
-                        </a>
-                        <div>
-                            <small>
-                                Pubblicato da: <b dangerouslySetInnerHTML={{ __html: highlightText(result.author)}} />
-                            </small>
-                        <hr/>
-                        </div>
-                        <div className="small mt-2 mb-1" dangerouslySetInnerHTML={{ __html: highlightText(result.content) }} />
-                    </div>
-                ))
-            }
-            </div>
         </div>
     )
 }
