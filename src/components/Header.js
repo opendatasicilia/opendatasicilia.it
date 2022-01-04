@@ -1,10 +1,13 @@
 import React, { useState } from 'react'
 import { Link } from 'gatsby'
 import { Squash as Hamburger } from 'hamburger-react'
+import { RiSearchLine } from 'react-icons/ri'
 import Logo from "../assets/images/opendatasicilia-logo.svg"
+import Search from './Search'
 
 export default function Header(){
     const [isOpen, setOpen] = useState(false)
+    const [search, setSearch] = useState(false)
     const menu = [
         {
             name: 'Blog',
@@ -19,8 +22,8 @@ export default function Header(){
             url: '/eventi'
         },
         {
-            name: 'Cose nostre',
-            url: '/cose-nostre'
+            name: 'Progetti',
+            url: '/progetti'
         }
     ]
 
@@ -29,17 +32,27 @@ export default function Header(){
             <nav className="navbar navbar-expand-lg">
                 <div className="container">
                     <Link className="navbar-brand" to={'/'}>
-                        <img className="p-1" style={{width:'60px'}} src={Logo} alt="opendatasicilia"/>
+                        <img className="p-1" src={Logo} alt="opendatasicilia"/>
                     </Link>
                     <div className="navbar-nav">
-                    {
-                        menu.map((item, i) => (
-                            <Link to={item.url} key={i}>
-                                <span className="menu-item m-3 text-black h5 fw-light">{item.name}</span>
-                            </Link>
-                        ))
-                    }
-                    <Hamburger size={42} toggled={isOpen} color={isOpen ? 'white' : 'black'} toggle={setOpen} />
+                        <div className={`search-bar ${search ? 'd-block' : 'd-none'}`}>
+                            <Search/>
+                        </div>
+                        <div className={search ? 'd-none' : 'd-block'}>
+                            {
+                                menu.map((item, i) => (
+                                    <Link to={item.url} key={i}>
+                                        <a className="menu-item m-3 text-black h5 fw-light">
+                                            {item.name}
+                                        </a>
+                                    </Link>
+                                ))
+                            }
+                        </div>
+                        <div role="button" style={{zIndex:'2'}} className="menu-item align-self-center" >
+                            <RiSearchLine className="search-icon" size={24} onClick={() => setSearch(!search)}/>
+                        </div>
+                        <Hamburger size={42} toggled={isOpen} color={isOpen ? 'white' : '#3F3D56'} toggle={setOpen} />
                     </div>
                     {
                         isOpen &&
@@ -47,7 +60,9 @@ export default function Header(){
                             <div className="menu-items">
                                 {menu.map((item, i) => (
                                     <Link to={item.url} key={i}>
-                                        <h1 className="text-white text-center h1">{item.name}</h1>
+                                        <h1 className="text-white text-center h1">
+                                            {item.name}
+                                        </h1>
                                     </Link>
                                 ))}
                             </div>
