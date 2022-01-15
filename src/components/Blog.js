@@ -10,7 +10,7 @@ export default function Blog({data}){
     const wordCount = (str) => str.split(" ").length
    
   return(
-    <div className="pt-5 pb-5">
+    <div className="pb-5">
         {
             data.map((post, i) => (
                     <div style={{border:'1px solid #dfdfdf'}} className="row rounded-4 mb-3 p-4" key={i}>
@@ -40,7 +40,7 @@ export default function Blog({data}){
                             
                             <div className="text-muted">
                                 <span>
-                                    di {post.author.node.name} | {format(new Date(post.date), "dd/MM/yyyy")}
+                                    di <Link to={`/author/${post.author.node.slug}`}>{post.author.node.name}</Link> | {format(new Date(post.date), "dd/MM/yyyy")}
                                 </span>
                                 <hr className="mt-1 mb-1"/>
                                 <div className="d-flex justify-content-between">

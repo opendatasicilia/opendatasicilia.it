@@ -64,6 +64,29 @@ exports.createPages = ({ graphql, actions }) => {
             };
         })
     })
+    const authors = graphql(`
+        query {
+            allWpUser {
+                nodes {
+                    slug
+                }
+            }
+        }
+    `)
+    .then(result => {
+        if(result.errors){
+            console.log(result.errors);
+        }
+        result.data.allWpUser.nodes.forEach(user => {
+            createPage({
+                path: `/author/${user.slug}`,
+                component: path.resolve(`./src/templates/user.js`),
+                context: {
+                    slug: user.slug
+                },
+            });
+        })
+    })
  
-    return Promise.all([posts])
+    return Promise.all([posts, authors])
 };

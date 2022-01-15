@@ -11,6 +11,7 @@ export const Post = graphql`
       author {
           node {
             name
+            slug
           }
         }
       comments {

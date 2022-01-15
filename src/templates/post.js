@@ -31,7 +31,7 @@ export default function Post({ data }) {
                 <div className="text-muted">
                     <div className="d-flex justify-content-between">
                         <h2 className="h6 fw-light">
-                            Di <b>{post.author.node.name}</b> | {date}
+                            Di <Link to={`/author/${post.author.node.slug}`}><b>{post.author.node.name}</b></Link> | {date}
                         </h2>
                         <span>
                             {post.comments.nodes.length} <CommentIcon/>
