@@ -19,8 +19,8 @@ export default function User({ data }) {
             <div className="container">
                 <Author user={user}/>
                 <div className="row pt-5 pb-5">
-                    <div className="col-1"/>
-                    <div className="col-11">
+                    <div className="col-12 col-lg-1"/>
+                    <div className="col-12 col-lg-11">
                         <h4>
                             <NumeroArticoli/>
                         </h4>
