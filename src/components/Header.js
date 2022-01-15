@@ -42,10 +42,8 @@ export default function Header(){
                         <div className={search ? 'd-none' : 'd-block'}>
                             {
                                 menu.map((item, i) => (
-                                    <Link to={item.url} key={i}>
-                                        <a className="menu-item m-3 text-black h5 fw-light">
-                                            {item.name}
-                                        </a>
+                                    <Link className="menu-item m-3 text-black h5 fw-light" to={item.url} key={i}>
+                                        {item.name}
                                     </Link>
                                 ))
                             }

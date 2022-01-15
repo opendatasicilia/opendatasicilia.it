@@ -4,7 +4,7 @@ import { useFlexSearch } from "react-use-flexsearch";
 import truncateStringToWord from "./functions/truncateStringToWord";
 import { renderToString } from "react-dom/server";
 
-export default function Search({...props}){
+export default function Search({isSearching}){
     const [query, setQuery] = useState('')
     const data = useStaticQuery(graphql`
         query {
@@ -14,14 +14,11 @@ export default function Search({...props}){
             }
         }
     `)
+    const results = useFlexSearch(query, data.localSearchPosts.index, data.localSearchPosts.store)
 
     useEffect(() => {
-        if(!props.isSearching){
-            setQuery('')
-        }
-    },[props.isSearching])
-
-    const results = useFlexSearch(query, data.localSearchPosts.index, data.localSearchPosts.store)
+        isSearching ? document.getElementById("input").focus() : setQuery('')
+    },[isSearching])
 
     useEffect(() => {
         document.getElementById("overlay").classList.toggle('d-block', query.length >= 1);
@@ -62,8 +59,10 @@ export default function Search({...props}){
     return(
         <div style={{zIndex:'2'}} className="position-relative w-100">
                 <input
+                    id="input"
+                    autoComplete={false}
                     checked={true}
-                    style={{height:'54px'}}
+                    style={{height:'54px',zIndex:'2',textOverflow:'clip'}}
                     className="p-3 border rounded-3 w-100"
                     placeholder="Cerca..."
                     value={query} 
