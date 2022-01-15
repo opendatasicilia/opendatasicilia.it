@@ -9,18 +9,6 @@ exports.createPages = ({ graphql, actions }) => {
                 nodes {
                     slug
                     uri
-                    categories {
-                        nodes {
-                            name
-                            slug
-                        }
-                    }
-                    tags {
-                        nodes {
-                          slug
-                          name
-                        }
-                    }
                 }
             }
         }
@@ -38,32 +26,55 @@ exports.createPages = ({ graphql, actions }) => {
                     uri: node.uri
                 },
             });
-            if(node.categories.nodes.length > 0){
-                node.categories.nodes.forEach(category => {
-                    createPage({
-                        path: `/category/${category.slug}`,
-                        component: path.resolve(`./src/templates/category.js`),
-                        context: {
-                            name: category.name,
-                            slug: category.slug
-                        },
-                    });
-                })
-            };
-            if(node.tags.nodes.length > 0){
-                node.tags.nodes.forEach(tag => {
-                    createPage({
-                        path: `/tag/${tag.slug}`,
-                        component: path.resolve(`./src/templates/tag.js`),
-                        context: {
-                            name: tag.name,
-                            slug: tag.slug
-                        },
-                    });
-                })
-            };
         })
     })
+    
+    const categories = graphql(`
+        query {
+            allWpCategory {
+                nodes {
+                    slug
+                    name
+                }
+            }
+        }
+    `)
+    .then(result => {
+        result.data.allWpCategory.nodes.forEach(category => {
+            createPage({
+                path: `/category/${category.slug}`,
+                component: path.resolve(`./src/templates/category.js`),
+                context: {
+                    name: category.name,
+                    slug: category.slug
+                },
+            });
+        })
+    })
+
+    const tags = graphql(`
+        query {
+            allWpTag {
+                nodes {
+                    slug
+                    name
+                }
+            }
+        }
+    `)
+    .then(result => {
+        result.data.allWpTag.nodes.forEach(tag => {
+            createPage({
+                path: `/tag/${tag.slug}`,
+                component: path.resolve(`./src/templates/tag.js`),
+                context: {
+                    name: tag.name,
+                    slug: tag.slug
+                },
+            });
+        })
+    })
+
     const authors = graphql(`
         query {
             allWpUser {
@@ -88,5 +99,5 @@ exports.createPages = ({ graphql, actions }) => {
         })
     })
  
-    return Promise.all([posts, authors])
+    return Promise.all([posts, categories, tags, authors])
 };

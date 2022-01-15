@@ -11,7 +11,7 @@ export default function User({ data }) {
 
     const NumeroArticoli = () => {
         const n = posts.length;
-        return n > 0 ? <>{`${n} ${n == 1 ? 'articolo pubblicato' : 'articoli pubblicati'}`}</> : null  
+        return n > 0 ? <>{`${n} ${n === 1 ? 'articolo pubblicato' : 'articoli pubblicati'}`}</> : null  
     }
 
     return (
