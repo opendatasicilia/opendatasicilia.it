@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-category-js",
+    "path": "/category/uncategorized",
+    "result": {"data":{"allWpPost":{"nodes":[]}},"pageContext":{"name":"Uncategorized","slug":"uncategorized"}},
+    "staticQueryHashes": ["67603594"]}
