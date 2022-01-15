@@ -18,5 +18,17 @@ export const Post = graphql`
           content
         }
       }
+      categories {
+        nodes {
+            name
+            slug
+        }
+      }
+      tags {
+        nodes {
+            name
+            slug
+        }
+      }
   }
 `
