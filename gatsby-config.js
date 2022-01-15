@@ -41,7 +41,7 @@ module.exports = {
         name: 'posts',
         engine: 'flexsearch',
         engineOptions: { 
-          tokenize: 'forward' 
+          tokenize: 'reverse' 
         },
         query: `
           {

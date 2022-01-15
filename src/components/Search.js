@@ -6,6 +6,8 @@ import { renderToString } from "react-dom/server";
 
 export default function Search({isSearching}){
     const [query, setQuery] = useState('')
+    const [suggestion, setSuggestion] = useState('')
+
     const data = useStaticQuery(graphql`
         query {
             localSearchPosts {
@@ -56,6 +58,26 @@ export default function Search({isSearching}){
         return truncateStringToWord(text, length);
     }, [query]);
 
+    useEffect(() => {
+        if(results[0]){
+            let a
+            var first = results[0].content;
+            var match = first && first.toLowerCase().indexOf(query.toLowerCase());
+   
+            if(match && (match !== -1)){
+                a = first.substring(match + query.length).split(" ")[0];
+            }
+            else{
+                setSuggestion('')
+                return
+            }
+            setSuggestion(a)
+        }
+        if(query.length === 0){
+            setSuggestion('')
+        }
+    },[query,results])
+
     return(
         <div style={{zIndex:'2'}} className="position-relative w-100">
                 <input
@@ -68,6 +90,10 @@ export default function Search({isSearching}){
                     value={query} 
                     onChange={(e) => setQuery(e.target.value)}
                 />
+                <div className="p-3" style={{background:'transparent',position:'absolute', top:'-1px', left:'1px',height:'54px',zIndes:'1'}}>
+                    <span style={{color:'transparent'}}>{query}</span>
+                    <span style={{color:'lightgray'}}>{suggestion}</span>
+                </div>
             {
             results.length > 0 &&
                 <div style={{zIndex:'3'}} className="search-results border rounded-3 mt-2"> 
