@@ -79,7 +79,7 @@ export default function Search({isSearching}){
                         results.map((result, i) => (
                             <>
                                 <div className={`border-bottom ${i === 0 ? 'mx-auto' : 'mx-3'}`} />
-                                <a className="text-decoration-none" href={`../blog/${result.slug}`}>
+                                <a className="text-decoration-none" href={result.uri}>
                                     <li className="p-3 border-0 text-black" key={i}>
                                             <h6 className="fw-bold" dangerouslySetInnerHTML={{ __html: highlightText(result.title)}} />
                                             <div>

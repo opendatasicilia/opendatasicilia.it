@@ -22,15 +22,7 @@ export const query = graphql`
     query($slug: String!) {
         allWpPost(filter: { slug: { eq: $slug } }) {
             nodes {
-                slug
-                title
-                content
-                date
-                author {
-                    node {
-                      name
-                    }
-                  }
+                ...Post
                 featuredImage {
                     node {
                         localFile {
