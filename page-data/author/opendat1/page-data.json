@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-user-js",
+    "path": "/author/opendat1",
+    "result": {"data":{"allWpUser":{"nodes":[{"name":"opendat1","slug":"opendat1","description":null,"avatar":{"url":"https://secure.gravatar.com/avatar/1da1f58b5de9f3f644952a23528e5907?s=96&d=mm&r=g"}}]},"allWpPost":{"nodes":[]}},"pageContext":{"slug":"opendat1"}},
+    "staticQueryHashes": ["67603594"]}
