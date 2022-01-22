@@ -14,7 +14,10 @@ module.exports = {
           perPage: 20, // default is 100
           requestConcurrency: 5, // default is 15
           previewRequestConcurrency: 2, // default is 5
-        }    
+        },
+        html: {
+          useGatsbyImage: false
+        }
       },
       type: {
         MediaItem: {
