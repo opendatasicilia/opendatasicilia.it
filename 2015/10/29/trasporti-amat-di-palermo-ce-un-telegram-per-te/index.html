@@ -83,7 +83,7 @@ class StartCommand extends Command
 <li><strong>Orario Linee</strong></li>
 <li><strong><strong>Fermata più vicina</strong></strong></li>
 </ul>
-<p><img loading="lazy" class="aligncenter" src="https://i2.wp.com/giovanni.pirrotta.it/images/amat-bot-2.jpg?resize=480%2C680" alt="" width="480" height="680" data-recalc-dims="1" /></p>
+<p><img loading="lazy" class="aligncenter" src="https://i0.wp.com/giovanni.pirrotta.it/images/amat-bot-2.jpg?resize=480%2C680" alt="" width="480" height="680" data-recalc-dims="1" /></p>
 <h3>Orario Linee</h3>
 <p>Le informazioni sono tutte presenti nel db per cui all’interno del metodo <em>handle</em>viene gestita la logica per estrarre le informazioni relative alle linee AMAT di Palermo.</p>
 <p>La query SQL utilizzata per mostrare le linee:</p>
@@ -92,7 +92,7 @@ class StartCommand extends Command
 FROM routes 
 ORDER BY route_id asc</pre>
 <p>&nbsp;</p>
-<p><img loading="lazy" class="aligncenter" src="https://i1.wp.com/giovanni.pirrotta.it/images/amat-bot-3.jpg?resize=478%2C677" alt="" width="478" height="677" data-recalc-dims="1" /></p>
+<p><img loading="lazy" class="aligncenter" src="https://i0.wp.com/giovanni.pirrotta.it/images/amat-bot-3.jpg?resize=478%2C677" alt="" width="478" height="677" data-recalc-dims="1" /></p>
 <p>A questo punto viene mostrato l’elenco delle linee AMAT. L’utente può scegliere la linea di cui vuole sapere gli orari. Una volta scelta la linea un nuovo comando recupererà il nome delle fermate della linea (Andata e ritorno) e gli orari relativi.</p>
 <p>Per recuperare gli orari delle corse uso la seguente query SQL, passandogli l’id della linea e l’id del servizio, cioè del periodo di riferimento nel calendario.</p>
 <pre class="toolbar:2 plain:false lang:mysql decode:true">SELECT * from stop_times, trips
@@ -101,11 +101,11 @@ WHERE stop_times.trip_id = trips.trip_id
       and service_id = :service_id
 GROUP BY stop_times.trip_id</pre>
 <p>A questo punto l’output ottenuto è il seguente:</p>
-<p><img loading="lazy" class="aligncenter" src="https://i2.wp.com/giovanni.pirrotta.it/images/amat-bot-4.jpg?resize=516%2C785" alt="" width="516" height="785" data-recalc-dims="1" /></p>
+<p><img loading="lazy" class="aligncenter" src="https://i0.wp.com/giovanni.pirrotta.it/images/amat-bot-4.jpg?resize=516%2C785" alt="" width="516" height="785" data-recalc-dims="1" /></p>
 <p>Passiamo adesso all’altra funzionalità.</p>
 <h3>Fermata più vicina</h3>
 <p>Per ottenere informazioni sulla fermata più vicina dobbiamo per prima cosa cliccare sulla graffetta e inviare la nostra posizione geografica</p>
-<p><img loading="lazy" class="aligncenter" src="https://i2.wp.com/giovanni.pirrotta.it/images/graffetta-amat.jpg?resize=532%2C872" alt="" width="532" height="872" data-recalc-dims="1" /></p>
+<p><img loading="lazy" class="aligncenter" src="https://i0.wp.com/giovanni.pirrotta.it/images/graffetta-amat.jpg?resize=532%2C872" alt="" width="532" height="872" data-recalc-dims="1" /></p>
 <p><img loading="lazy" class="aligncenter" src="https://i0.wp.com/giovanni.pirrotta.it/images/posizione-amat.jpg?resize=547%2C872" alt="" width="547" height="872" data-recalc-dims="1" /></p>
 <p>Fatto ciò un comando calcolerà le 5 fermate più vicine recuperandole dalla tabella<em>stops</em> eseguendo la seguente query:</p>
 <pre class="toolbar:2 plain:false lang:mysql decode:true">SELECT stop_id, stop_name, stop_lat, stop_lon, 
@@ -123,7 +123,7 @@ AND stops.stop_id = :stop_id
 GROUP BY route_id</pre>
 <p>&nbsp;</p>
 <p>Vengono mostrate a video le 5 fermate più vicine con le relative linee passanti. La prima fermata viene visualizzata su una mappa (si lo so, è Google Maps e non OpenStreetMap; nativamente Telegram usa le mappe di Google per inviare al client le posizioni geografiche; per usare OSM si potrebbero, ad esempio, creare al volo immagini statiche e inviarle all’utente per la posizione delle fermate).</p>
-<p><img loading="lazy" class="aligncenter" src="https://i1.wp.com/giovanni.pirrotta.it/images/risposta-fermate.jpg?resize=544%2C864" alt="" width="544" height="864" data-recalc-dims="1" /></p>
+<p><img loading="lazy" class="aligncenter" src="https://i0.wp.com/giovanni.pirrotta.it/images/risposta-fermate.jpg?resize=544%2C864" alt="" width="544" height="864" data-recalc-dims="1" /></p>
 <p>Per il <em>deploy</em> del BOT ho usato <a href="http://giovanni.pirrotta.it/blog/2015/10/09/stazione-amat-di-palermo-ce-un-telegram-per-te/w.cloudflare.com/ssl" target="_blank" rel="noopener">Cloudflare</a> per avere una connessione SSL, condizione necessaria per poter utilizzare il <a href="https://core.telegram.org/bots/api#setwebhook" target="_blank" rel="noopener">WebHook</a> in Telegram, invece del metodo manuale <a href="https://core.telegram.org/bots/api#getting-updates" target="_blank" rel="noopener">getUpdates</a>.</p>
 <h3>Ricapitolando</h3>
 <ul>
@@ -132,12 +132,12 @@ GROUP BY route_id</pre>
 <li>Il BOT sviluppato è <em>ancora</em> una demo. E’ possibile aggiungere altre funzionalità, il limite è la fantasia.</li>
 </ul>
 <p>Per interagire con il bot dovete aggiungere al vostro client Telegram il contatto: <a href="https://telegram.me/amatpabot" target="_blank" rel="noopener">@amatPABot</a>.</p>
-<p><img loading="lazy" class="aligncenter" src="https://i1.wp.com/giovanni.pirrotta.it/images/AMATBOTlogo.jpg?resize=308%2C199" alt="" width="308" height="199" data-recalc-dims="1" /></p>
+<p><img loading="lazy" class="aligncenter" src="https://i0.wp.com/giovanni.pirrotta.it/images/AMATBOTlogo.jpg?resize=308%2C199" alt="" width="308" height="199" data-recalc-dims="1" /></p>
 <p>Il codice sorgente lo trovate <a href="https://github.com/gpirrotta/amat-pa-bot" target="_blank" rel="noopener">qui</a>.</p>
 <p><strong>Attenzione, è’ una versione ancora poco stabile, non pronta per andare in produzione.</strong></p>
 <p>Se questo lavoro vi è piaciuto un pò, potreste contribuire a farlo conoscere in giro sui social, grazie.</p>
 <p><em>Twittami</em></p>
-<p><a href="http://twitter.com/share?url=https://telegram.me/amatpabot&amp;text=@gpirrotta+AmatPABot+-+AMAT+Palermo+BOT+Informazioni+trasporti+pubblici" target="_blank" rel="noopener"><img loading="lazy" class="alignleft" src="https://i1.wp.com/giovanni.pirrotta.it/images/twitter.png?resize=80%2C80" alt="" width="80" height="80" data-recalc-dims="1" /></a></p>
+<p><a href="http://twitter.com/share?url=https://telegram.me/amatpabot&amp;text=@gpirrotta+AmatPABot+-+AMAT+Palermo+BOT+Informazioni+trasporti+pubblici" target="_blank" rel="noopener"><img loading="lazy" class="alignleft" src="https://i0.wp.com/giovanni.pirrotta.it/images/twitter.png?resize=80%2C80" alt="" width="80" height="80" data-recalc-dims="1" /></a></p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <p>Idee, critiche e suggerimenti sono benvenuti.</p>
