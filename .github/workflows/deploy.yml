@@ -1,6 +1,7 @@
 name: Gatsby Build & Deploy
 
 on:
+  workflow_dispatch:
   push:
   repository_dispatch:
     types:
