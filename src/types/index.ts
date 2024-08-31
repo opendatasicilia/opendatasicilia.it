@@ -69,6 +69,10 @@ interface TemplateProps {
   pageContext?: any;
 }
 
+interface BlogPostProps {
+  post: WpPost;
+}
+
 export {
   WpPost,
   WpCategory,
@@ -79,4 +83,5 @@ export {
   AllWpPostData,
   GraphQLResult,
   TemplateProps,
+  BlogPostProps,
 };

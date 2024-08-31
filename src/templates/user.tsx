@@ -24,7 +24,7 @@ export default function User({ data }: TemplateProps) {
             <h4>
               <NumeroArticoli />
             </h4>
-            <Blog data={posts} />
+            <Blog posts={posts} />
           </div>
         </div>
       </div>

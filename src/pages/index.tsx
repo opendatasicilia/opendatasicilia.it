@@ -55,7 +55,7 @@ export default function Index({ data }: { data: AllWpPostData }) {
       </div>
       <div className="container pt-5">
         <h1 style={{ fontSize: "41px" }}>Ultimi post</h1>
-        <Blog data={posts} />
+        <Blog posts={posts} />
       </div>
     </Layout>
   );

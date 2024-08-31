@@ -9,7 +9,7 @@ export default function Category({ data, pageContext }: TemplateProps) {
     <Layout>
       <div className="container">
         <h1>Categoria: {pageContext.name}</h1>
-        <Blog data={posts} />
+        <Blog posts={posts} />
       </div>
     </Layout>
   );

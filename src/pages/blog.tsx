@@ -9,7 +9,7 @@ export default function BlogPage({ data }: { data: AllWpPostData }) {
     <Layout title="Blog">
       <div className="container">
         <h1 className="fw-bold">Tutti i post</h1>
-        <Blog data={posts} />
+        <Blog posts={posts} />
       </div>
     </Layout>
   );

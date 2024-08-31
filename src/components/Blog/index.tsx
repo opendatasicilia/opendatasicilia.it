@@ -1,74 +1,13 @@
-import React from "react";
-import { Link } from "gatsby";
-import { GatsbyImage } from "gatsby-plugin-image";
-import placeholder from "@assets/images/placeholder.png";
-import { format } from "date-fns";
-import { BiComment as CommentIcon } from "react-icons/bi";
+import React, { Fragment } from "react";
 import { WpPost } from "@types";
-import { getReadingTime } from "@utils/helpers";
+import { BlogPost } from "./partials";
 
-export const Blog = ({ data }: { data: WpPost[] }) => {
-  return (
-    <div className="pb-5">
-      {data.map((post, i) => (
-        <div
-          style={{ border: "1px solid #dfdfdf" }}
-          className="row rounded-4 mb-3 p-4"
-          key={i}
-        >
-          <div className="col-12 col-md-4">
-            <Link to={post.uri}>
-              {post.featuredImage ? (
-                <GatsbyImage
-                  className="rounded-4 mb-3 mb-md-0"
-                  image={
-                    post.featuredImage.node.localFile.childImageSharp
-                      .gatsbyImageData
-                  }
-                  alt={post.title}
-                />
-              ) : (
-                <img
-                  className="rounded-3 mb-3 mb-md-0"
-                  src={placeholder}
-                  alt={post.title}
-                />
-              )}
-            </Link>
-          </div>
-
-          <div className="col-12 col-md-8 align-self-center">
-            <Link to={`/category/${post.categories.nodes[0].slug}`}>
-              <h3 className="h6 fw-medium pb-2">
-                {post.categories.nodes[0].name.toUpperCase()}
-              </h3>
-            </Link>
-            <Link className="text-black post" to={post.uri}>
-              <h2 className="h4 fw-bold">{post.title}</h2>
-            </Link>
-            {post.excerpt && (
-              <div dangerouslySetInnerHTML={{ __html: post.excerpt }} />
-            )}
-
-            <div className="text-muted">
-              <span>
-                di{" "}
-                <Link to={`/author/${post.author.node.slug}`}>
-                  {post.author.node.name}
-                </Link>{" "}
-                | {format(new Date(post.date), "dd/MM/yyyy")}
-              </span>
-              <hr className="mt-1 mb-1" />
-              <div className="d-flex justify-content-between">
-                <span>{getReadingTime(post.content)} min</span>
-                <span>
-                  {post.comments.nodes.length} <CommentIcon />
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-      ))}
-    </div>
-  );
-};
+export const Blog = ({ posts }: { posts: WpPost[] }) => (
+  <div className="pb-5">
+    {posts.map((post, i) => (
+      <Fragment key={i}>
+        <BlogPost post={post} />
+      </Fragment>
+    ))}
+  </div>
+);

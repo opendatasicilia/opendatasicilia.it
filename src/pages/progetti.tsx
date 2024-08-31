@@ -10,7 +10,7 @@ export default function Progetti({ data }: { data: AllWpPostData }) {
     <Layout title={title}>
       <div className="container">
         <h1 className="fw-bold">{title}</h1>
-        <Blog data={posts} />
+        <Blog posts={posts} />
       </div>
     </Layout>
   );
