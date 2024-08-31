@@ -7,9 +7,9 @@ import {
   FaYoutube as yticon,
 } from "react-icons/fa";
 
-import Card1 from "../assets/images/card-1.svg";
-import Card2 from "../assets/images/card-2.svg";
-import Card3 from "../assets/images/card-3.svg";
+import Card1 from "@assets/images/card-1.svg";
+import Card2 from "@assets/images/card-2.svg";
+import Card3 from "@assets/images/card-3.svg";
 
 export const cards = [
   {

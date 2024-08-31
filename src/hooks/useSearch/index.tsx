@@ -4,7 +4,7 @@ import { useState, useEffect, useCallback } from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import { useFlexSearch } from "react-use-flexsearch";
 import { renderToString } from "react-dom/server";
-import { truncateStringToWord } from "../../utils/helpers";
+import { truncateStringToWord } from "@utils/helpers";
 
 interface UseSearchProps {
   isSearching?: boolean;

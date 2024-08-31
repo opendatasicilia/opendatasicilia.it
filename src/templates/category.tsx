@@ -1,8 +1,7 @@
 import React from "react";
 import { graphql } from "gatsby";
-import { Layout } from "../components/Layout";
-import { Blog } from "../components/Blog";
-import { TemplateProps } from "../types";
+import { Layout, Blog } from "@components";
+import { TemplateProps } from "@types";
 
 export default function Category({ data, pageContext }: TemplateProps) {
   const posts = data.allWpPost.nodes;

@@ -1,5 +1,5 @@
 import React from "react";
-import { useSearch } from "../../hooks";
+import { useSearch } from "@hooks";
 import { SearchResults } from "./partials/SearchResults";
 import { SearchBar } from "./partials/SearchBar";
 

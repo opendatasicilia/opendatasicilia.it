@@ -1,8 +1,8 @@
 import React from "react";
-import { Layout } from "../components/Layout";
-import { Search } from "../components/Search";
-import image404 from "../assets/images/404.svg";
+import { Layout, Search } from "@components";
 import { RiSearchLine } from "react-icons/ri";
+
+import image404 from "@assets/images/404.svg";
 
 export default function NotFound() {
   return (

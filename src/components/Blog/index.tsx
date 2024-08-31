@@ -1,11 +1,11 @@
 import React from "react";
 import { Link } from "gatsby";
 import { GatsbyImage } from "gatsby-plugin-image";
-import placeholder from "../../assets/images/placeholder.png";
+import placeholder from "@assets/images/placeholder.png";
 import { format } from "date-fns";
 import { BiComment as CommentIcon } from "react-icons/bi";
-import { WpPost } from "../../types";
-import { getReadingTime } from "../../utils/helpers";
+import { WpPost } from "@types";
+import { getReadingTime } from "@utils/helpers";
 
 export const Blog = ({ data }: { data: WpPost[] }) => {
   return (

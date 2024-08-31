@@ -1,7 +1,7 @@
 import React from "react";
-import { Layout } from "../components/Layout";
-import { socials } from "../data";
-import { getLorem } from "../utils/helpers";
+import { Layout } from "@components";
+import { socials } from "@data";
+import { getLorem } from "@utils/helpers";
 
 export default function ChiSiamo() {
   const title = "Chi Siamo";

@@ -2,9 +2,10 @@ import React, { useState } from "react";
 import { Link } from "gatsby";
 import { Squash as Hamburger } from "hamburger-react";
 import { RiSearchLine, RiCloseFill } from "react-icons/ri";
-import Logo from "../../../assets/images/opendatasicilia-logo.svg";
-import { Search } from "../../Search";
-import { menu } from "../../../data";
+import { Search } from "@components";
+import { menu } from "@data";
+
+import Logo from "@assets/images/opendatasicilia-logo.svg";
 
 export const Header = () => {
   const [isOpen, setOpen] = useState(false);

@@ -1,12 +1,12 @@
 import React from "react";
 import { Link, graphql } from "gatsby";
-import { Layout } from "../components/Layout";
+import { Layout } from "@components";
 import { GatsbyImage } from "gatsby-plugin-image";
 import { format } from "date-fns";
 import { it } from "date-fns/esm/locale";
 import { BiComment as CommentIcon } from "react-icons/bi";
-import { TemplateProps, WpTag } from "../types";
-import { getReadingTime } from "../utils/helpers";
+import { TemplateProps, WpTag } from "@types";
+import { getReadingTime } from "@utils/helpers";
 
 export default function Post({ data }: TemplateProps) {
   const post = data.allWpPost.nodes[0];

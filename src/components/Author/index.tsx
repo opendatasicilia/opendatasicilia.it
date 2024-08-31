@@ -1,5 +1,5 @@
 import React from "react";
-import { WpUser } from "../../types";
+import { WpUser } from "@types";
 
 export const Author = ({ user }: { user: WpUser }) => (
   <div className="row text-center text-lg-start">

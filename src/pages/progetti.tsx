@@ -1,8 +1,7 @@
 import React from "react";
 import { graphql } from "gatsby";
-import { Layout } from "../components/Layout";
-import { Blog } from "../components/Blog";
-import { AllWpPostData } from "../types";
+import { Layout, Blog } from "@components";
+import { AllWpPostData } from "@types";
 
 export default function Progetti({ data }: { data: AllWpPostData }) {
   const title = "Progetti";
