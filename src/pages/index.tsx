@@ -6,6 +6,7 @@ import IntroSVG from "../assets/images/intro.svg";
 
 import { cards } from "../data";
 import { getLorem } from "../utils/helpers";
+import { AllWpPostData } from "../types";
 
 export default function Index({ data }: { data: AllWpPostData }) {
   const posts = data.allWpPost.nodes;

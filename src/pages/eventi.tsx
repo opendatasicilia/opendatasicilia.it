@@ -2,6 +2,7 @@ import React from "react";
 import { graphql } from "gatsby";
 import { Layout } from "../components/Layout";
 import { Blog } from "../components/Blog";
+import { AllWpPostData } from "../types";
 
 export default function Eventi({ data }: { data: AllWpPostData }) {
   const title = "Eventi";

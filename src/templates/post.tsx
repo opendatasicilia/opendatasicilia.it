@@ -5,6 +5,7 @@ import { GatsbyImage } from "gatsby-plugin-image";
 import { format } from "date-fns";
 import { it } from "date-fns/esm/locale";
 import { BiComment as CommentIcon } from "react-icons/bi";
+import { TemplateProps, WpTag } from "../types";
 
 export default function Post({ data }: TemplateProps) {
   const post = data.allWpPost.nodes[0];

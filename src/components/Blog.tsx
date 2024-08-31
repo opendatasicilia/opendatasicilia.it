@@ -4,12 +4,9 @@ import { GatsbyImage } from "gatsby-plugin-image";
 import placeholder from "../assets/images/placeholder.png";
 import { format } from "date-fns";
 import { BiComment as CommentIcon } from "react-icons/bi";
+import { WpPost } from "../types";
 
-interface BlogProps {
-  data: any[];
-}
-
-export const Blog = ({ data }: BlogProps) => {
+export const Blog = ({ data }: { data: WpPost[] }) => {
   const wordCount = (str: string) => str.split(" ").length;
 
   return (
@@ -50,7 +47,9 @@ export const Blog = ({ data }: BlogProps) => {
             <Link className="text-black post" to={post.uri}>
               <h2 className="h4 fw-bold">{post.title}</h2>
             </Link>
-            <div dangerouslySetInnerHTML={{ __html: post.excerpt }} />
+            {post.excerpt && (
+              <div dangerouslySetInnerHTML={{ __html: post.excerpt }} />
+            )}
 
             <div className="text-muted">
               <span>

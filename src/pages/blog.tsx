@@ -2,6 +2,7 @@ import React from "react";
 import { graphql } from "gatsby";
 import { Layout } from "../components/Layout";
 import { Blog } from "../components/Blog";
+import { AllWpPostData } from "../types";
 
 export default function BlogPage({ data }: { data: AllWpPostData }) {
   const posts = data.allWpPost.nodes;

@@ -1,10 +1,10 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import { Helmet } from "react-helmet";
 import { Header } from "./Header";
 import { Footer } from "./Footer";
 
 interface LayoutProps {
-  children: React.ReactNode;
+  children: ReactNode;
   title?: string;
 }
 

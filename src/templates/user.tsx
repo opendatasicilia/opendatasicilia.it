@@ -3,6 +3,7 @@ import { graphql } from "gatsby";
 import { Blog } from "../components/Blog";
 import { Layout } from "../components/Layout";
 import { Author } from "../components/Author";
+import { TemplateProps } from "../types";
 
 export default function User({ data }: TemplateProps) {
   const user = data.allWpUser.nodes[0];

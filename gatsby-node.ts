@@ -1,5 +1,6 @@
 import path from "path";
 import { CreatePagesArgs } from "gatsby";
+import { GraphQLResult, WpCategory, WpPost, WpTag, WpUser } from "./src/types";
 
 const createPosts = async (
   graphql: CreatePagesArgs["graphql"],
