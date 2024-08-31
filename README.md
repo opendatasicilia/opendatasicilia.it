@@ -12,12 +12,12 @@
 ## Sviluppo locale
 - Clonare il repository
 - Installare Node, e gatsby-cli come illustrato [qui](https://github.com/opendatasicilia/opendatasicilia.it/discussions/29)
-- Lanciare il comando `npm install` per scaricare le dipendenze
-- Lanciamo il comando `gatsby develop`
+- Lanciare il comando `yarn` per scaricare le dipendenze
+- Lanciamo il comando `yarn start`
 
 ## GitHub Pages
 - Lanciare `cp .env.development .env.production`
-- Lanciare `npm run deploy`
+- Lanciare `yarn deploy`
 
 ## URL
 https://dev.opendatasicilia.it

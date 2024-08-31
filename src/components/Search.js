@@ -60,7 +60,7 @@ export default function Search({isSearching}){
         <div style={{zIndex:'2'}} className="position-relative w-100">
                 <input
                     id="input"
-                    autoComplete={false}
+                    autoComplete="false"
                     checked={true}
                     style={{height:'54px',zIndex:'2',textOverflow:'clip'}}
                     className="p-3 border rounded-3 w-100"
@@ -79,7 +79,7 @@ export default function Search({isSearching}){
                         results.map((result, i) => (
                             <>
                                 <div className={`border-bottom ${i === 0 ? 'mx-auto' : 'mx-3'}`} />
-                                <a className="text-decoration-none" href={result.uri}>
+                                <a className="text-decoration-none" href={result.uri} aria-label={result.title} key={i}>
                                     <li className="p-3 border-0 text-black" key={i}>
                                             <h6 className="fw-bold" dangerouslySetInnerHTML={{ __html: highlightText(result.title)}} />
                                             <div>
