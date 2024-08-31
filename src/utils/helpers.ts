@@ -8,9 +8,13 @@ export const truncateStringToWord = (str: string, length: number) => {
     str = str.replace(/[^\s]+$/, "");
   }
   str = str.replace(/[^\w]+$/, "");
-  var ellipsis = str.length > 0 ? "..." : "";
+  const ellipsis = str.length > 0 ? "..." : "";
   return str + ellipsis;
 };
 
 export const getLorem = () =>
   "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sodales tincidunt risus vel tempus. Nunc lobortis faucibus enim in iaculis. Nulla urna metus, gravida faucibus varius eu, imperdiet et leo. Proin finibus, lectus convallis consequat posuere, quam ex rhoncus lectus, consequat hendrerit odio velit nec purus. ";
+
+const wordCount = (str: string) => str.split(" ").length;
+
+export const getReadingTime = (str: string) => Math.round(wordCount(str) / 225);

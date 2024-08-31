@@ -1,12 +1,11 @@
 import React from "react";
-import { WpUser } from "../types";
+import { WpUser } from "../../types";
 
 export const Author = ({ user }: { user: WpUser }) => (
   <div className="row text-center text-lg-start">
     <div className="col-12 col-lg-1">
       <img
-        style={{ outline: "#00a47f solid 3px" }}
-        className="rounded-circle"
+        className="rounded-circle profile"
         src={user.avatar.url}
         alt={user.name}
       />

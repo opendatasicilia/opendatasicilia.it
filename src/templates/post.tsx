@@ -6,10 +6,10 @@ import { format } from "date-fns";
 import { it } from "date-fns/esm/locale";
 import { BiComment as CommentIcon } from "react-icons/bi";
 import { TemplateProps, WpTag } from "../types";
+import { getReadingTime } from "../utils/helpers";
 
 export default function Post({ data }: TemplateProps) {
   const post = data.allWpPost.nodes[0];
-  const wordCount = (str: string) => str.split(" ").length;
   const date = format(new Date(post.date), "dd MMMM yyyy", { locale: it });
 
   return (
@@ -63,7 +63,7 @@ export default function Post({ data }: TemplateProps) {
                 </div>
               ))}
             </span>
-            <span>{Math.round(wordCount(post.content) / 225)} min</span>
+            <span>{getReadingTime(post.content)} min</span>
           </div>
         </div>
 

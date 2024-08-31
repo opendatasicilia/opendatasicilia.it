@@ -1,14 +1,13 @@
 import React from "react";
 import { Link } from "gatsby";
 import { GatsbyImage } from "gatsby-plugin-image";
-import placeholder from "../assets/images/placeholder.png";
+import placeholder from "../../assets/images/placeholder.png";
 import { format } from "date-fns";
 import { BiComment as CommentIcon } from "react-icons/bi";
-import { WpPost } from "../types";
+import { WpPost } from "../../types";
+import { getReadingTime } from "../../utils/helpers";
 
 export const Blog = ({ data }: { data: WpPost[] }) => {
-  const wordCount = (str: string) => str.split(" ").length;
-
   return (
     <div className="pb-5">
       {data.map((post, i) => (
@@ -61,7 +60,7 @@ export const Blog = ({ data }: { data: WpPost[] }) => {
               </span>
               <hr className="mt-1 mb-1" />
               <div className="d-flex justify-content-between">
-                <span>{Math.round(wordCount(post.content) / 225)} min</span>
+                <span>{getReadingTime(post.content)} min</span>
                 <span>
                   {post.comments.nodes.length} <CommentIcon />
                 </span>

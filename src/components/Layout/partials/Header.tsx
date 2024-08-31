@@ -2,31 +2,14 @@ import React, { useState } from "react";
 import { Link } from "gatsby";
 import { Squash as Hamburger } from "hamburger-react";
 import { RiSearchLine, RiCloseFill } from "react-icons/ri";
-import Logo from "../assets/images/opendatasicilia-logo.svg";
-import { Search } from "./Search";
+import Logo from "../../../assets/images/opendatasicilia-logo.svg";
+import { Search } from "../../Search";
+import { menu } from "../../../data";
 
 export const Header = () => {
   const [isOpen, setOpen] = useState(false);
   const [search, setSearch] = useState(false);
   const SearchIcon = search ? RiCloseFill : RiSearchLine;
-  const menu = [
-    {
-      name: "Blog",
-      url: "/blog",
-    },
-    {
-      name: "Chi siamo",
-      url: "/chi-siamo",
-    },
-    {
-      name: "Eventi",
-      url: "/eventi",
-    },
-    {
-      name: "Progetti",
-      url: "/progetti",
-    },
-  ];
 
   return (
     <header>
@@ -52,8 +35,7 @@ export const Header = () => {
             </div>
             <div
               role="button"
-              style={{ zIndex: "2" }}
-              className="menu-item align-self-center"
+              className="menu-item align-self-center z-index-2"
             >
               <SearchIcon
                 className="search-icon"

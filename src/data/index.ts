@@ -26,6 +26,25 @@ export const cards = [
   },
 ];
 
+export const menu = [
+  {
+    name: "Blog",
+    url: "/blog",
+  },
+  {
+    name: "Chi siamo",
+    url: "/chi-siamo",
+  },
+  {
+    name: "Eventi",
+    url: "/eventi",
+  },
+  {
+    name: "Progetti",
+    url: "/progetti",
+  },
+];
+
 export const socials = [
   [
     {
