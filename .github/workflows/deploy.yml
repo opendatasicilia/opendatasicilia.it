@@ -3,6 +3,9 @@ name: Gatsby Build & Deploy
 on:
   workflow_dispatch:
   push:
+    branches:
+      - main
+      - dev
   repository_dispatch:
     types:
       - deploy
