@@ -1,181 +1,193 @@
-h1,h2,h3,h4,h5,h6, .subtitle, .menu-item{
-    font-family: 'Josefin Sans', sans-serif;
-    color: #3F3D56;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.subtitle,
+.menu-item {
+  font-family: "Josefin Sans", sans-serif;
+  color: #3f3d56;
 }
 
-p, h6, small{
-    font-family: 'Lato', sans-serif;
-    color: #3F3D56;
+p,
+h6,
+small {
+  font-family: "Lato", sans-serif;
+  color: #3f3d56;
 }
 
-input{
-    outline: none;
+input {
+  outline: none;
 }
 
-main{
-    display: flex;
-    flex-direction: column;
-    min-height: 80vh;
+main {
+  display: flex;
+  flex-direction: column;
+  min-height: 80vh;
 }
 footer {
-    display:flex;
-    height: 300px;
-    background-color: #006d77;
+  display: flex;
+  height: 300px;
+  background-color: #006d77;
 }
 
-figure{
-    width:unset!important;
+figure {
+  width: unset !important;
 }
 
-a{
-    text-decoration: none;
-    color: #00A47F;
+a {
+  text-decoration: none;
+  color: #00a47f;
 }
-a:hover{
-    color: #00A47F;
-    text-decoration: underline;
-}
-
-p.subtitle{
-    font-weight: 300;
-    font-size: 24px;
+a:hover {
+  color: #00a47f;
+  text-decoration: underline;
 }
 
-img{
-    max-width: 100%;
-    height: auto;
-}
-button{
-    min-width:170px;
-    height:44px;
-    text-transform: uppercase;
-}
-button.primary{
-    color: white;
-    background-color:#006d77;
-    border: 1px solid #006d77;
-}
-button.secondary{
-    color: #3d3d3d;
-    background-color:transparent;
-    border: 1px solid #006D77;
-}
-.wrapperGrad{
-    background: transparent linear-gradient(180deg, #FFFFFF 0%, #FFFFFF 16%, #006D77 200%) 0% 0% no-repeat padding-box;
-}
-h1.logotype{
-    font-size: 60px;
-    color:#3F3D56;
-    max-width: 9ch;
-    line-height: 70px;
-}
-a.post:hover{
-    text-decoration: none;
-}
-a.post:hover h2{
-    text-decoration: underline;
-}
-.navbar-nav > a:hover{
-    text-decoration-color: black;
+p.subtitle {
+  font-weight: 300;
+  font-size: 24px;
 }
 
-.hamburger-react{
-    display:none;
+img {
+  max-width: 100%;
+  height: auto;
 }
-.rounded-4{
-    border-radius: 17px;
+button {
+  min-width: 170px;
+  height: 44px;
+  text-transform: uppercase;
+}
+button.primary {
+  color: white;
+  background-color: #006d77;
+  border: 1px solid #006d77;
+}
+button.secondary {
+  color: #3d3d3d;
+  background-color: transparent;
+  border: 1px solid #006d77;
+}
+.wrapperGrad {
+  background: transparent
+    linear-gradient(180deg, #ffffff 0%, #ffffff 16%, #006d77 200%) 0% 0%
+    no-repeat padding-box;
+}
+h1.logotype {
+  font-size: 60px;
+  color: #3f3d56;
+  max-width: 9ch;
+  line-height: 70px;
+}
+a.post:hover {
+  text-decoration: none;
+}
+a.post:hover h2 {
+  text-decoration: underline;
+}
+.navbar-nav > a:hover {
+  text-decoration-color: black;
 }
 
-.mobile-menu{
-    position:fixed;
-    background-color: teal;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    z-index: 1;
+.hamburger-react {
+  display: none;
+}
+.rounded-4 {
+  border-radius: 17px;
 }
 
-.mobile-menu .menu-items{
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-.menu-item > a:hover{
-    text-decoration-color: white;
+.mobile-menu {
+  position: fixed;
+  background-color: teal;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
 }
 
-.menu-items > a:hover{
-    text-decoration-color: white;
+.mobile-menu .menu-items {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.menu-item > a:hover {
+  text-decoration-color: white;
+}
+
+.menu-items > a:hover {
+  text-decoration-color: white;
 }
 
 @media (max-width: 991px) {
-    .hamburger-react{
-        display:block;
-        z-index: 2;
-    }
-    .navbar-nav .menu-item, .search-bar{
-        display:none!important;
-    }
+  .hamburger-react {
+    display: block;
+    z-index: 2;
+  }
+  .navbar-nav .menu-item,
+  .search-bar {
+    display: none !important;
+  }
 }
 
-div.sharedaddy{
-    display:none!important;
+div.sharedaddy {
+  display: none !important;
 }
 
-.evidenzia{
-    color: #00A47F;
-    text-decoration: underline;
-    font-weight: 600;
+.evidenzia {
+  color: #00a47f;
+  text-decoration: underline;
+  font-weight: 600;
 }
 
-div.search-bar{
-    margin-right: -36px;
-    border: none;
-    width: 500px;
+div.search-bar {
+  margin-right: -36px;
+  border: none;
+  width: 500px;
 }
 
-div.search-results{
-    position:absolute;
-    width: 100%;
-    max-height: 80vh;
-    overflow: auto;
-    overflow-x: none;
-    background-color: white;
-    z-index: 1;
+div.search-results {
+  position: absolute;
+  width: 100%;
+  max-height: 80vh;
+  overflow: auto;
+  overflow-x: hidden;
+  background-color: white;
+  z-index: 1;
 }
 .search-results::-webkit-scrollbar {
-    width: 10px;
+  width: 10px;
 }
 .search-results::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 3px lightgray;
+  box-shadow: inset 0 0 3px lightgray;
 }
 .search-results::-webkit-scrollbar-thumb {
-    background: lightgray;
+  background: lightgray;
 }
 
-.menu-item svg.search-icon{
-    color:lightgray;
-    transition: .2s;
+.menu-item svg.search-icon {
+  color: lightgray;
+  transition: 0.2s;
 }
-.menu-item svg.search-icon:hover{
-    color:#3f3d56;
+.menu-item svg.search-icon:hover {
+  color: #3f3d56;
 }
 
-.modal-open{
-    backdrop-filter: blur(2px);
+.modal-open {
+  backdrop-filter: blur(2px);
 }
 
 #overlay {
-    position: fixed; /* Sit on top of the page content */
-    display: none; /* Hidden by default */
-    width: 100%; /* Full width (cover the whole page) */
-    height: 100%; /* Full height (cover the whole page) */
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0,0,0,0.5); /* Black background with opacity */
-    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
-  }
+  position: fixed; /* Sit on top of the page content */
+  display: none; /* Hidden by default */
+  width: 100%; /* Full width (cover the whole page) */
+  height: 100%; /* Full height (cover the whole page) */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
+  z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+}

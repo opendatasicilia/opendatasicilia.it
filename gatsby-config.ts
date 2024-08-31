@@ -1,5 +1,5 @@
-require("dotenv").config({path: `.env.${process.env.NODE_ENV}`})
-  
+require("dotenv").config({ path: `.env.${process.env.NODE_ENV}` });
+
 module.exports = {
   flags: {
     PRESERVE_FILE_DOWNLOAD_CACHE: true,
@@ -16,16 +16,16 @@ module.exports = {
           previewRequestConcurrency: 2, // default is 5
         },
         html: {
-          useGatsbyImage: false
-        }
+          useGatsbyImage: false,
+        },
       },
       type: {
         MediaItem: {
           localFile: {
-            requestConcurrency: 50
-          }
-        }
-      }
+            requestConcurrency: 50,
+          },
+        },
+      },
     },
     {
       resolve: `gatsby-plugin-manifest`,
@@ -44,12 +44,12 @@ module.exports = {
     "gatsby-plugin-sharp",
     "gatsby-plugin-no-sourcemaps",
     {
-      resolve: 'gatsby-plugin-local-search',
+      resolve: "gatsby-plugin-local-search",
       options: {
-        name: 'posts',
-        engine: 'flexsearch',
-        engineOptions: { 
-          tokenize: 'forward' 
+        name: "posts",
+        engine: "flexsearch",
+        engineOptions: {
+          tokenize: "forward",
         },
         query: `
           {
@@ -68,19 +68,23 @@ module.exports = {
             }
           }
         `,
-        ref: 'slug',
-        index: ['title', 'author', 'content'],
-        store: ['slug', 'uri', 'title', 'content', 'author'],
-        normalizer: ({ data }) =>
+        ref: "slug",
+        index: ["title", "author", "content"],
+        store: ["slug", "uri", "title", "content", "author"],
+        normalizer: ({ data }: { data: AllWpPostData }) =>
           data.allWpPost.nodes.map((node) => ({
             slug: node.slug,
             title: node.title,
             uri: node.uri,
-            content: node.content.replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '').replace(/<[^>]+>/g, ''),
-            author: node.author.node.name
+            content: node.content
+              .replace(
+                /<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi,
+                ""
+              )
+              .replace(/<[^>]+>/g, ""),
+            author: node.author.node.name,
           })),
       },
     },
   ],
 };
-  
