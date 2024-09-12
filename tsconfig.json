@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "target": "es2016",
+    "module": "commonjs",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "jsx": "react",
+    "baseUrl": "src",
+    "paths": {
+      "@assets/*": ["assets/*"],
+      "@components": ["components"],
+      "@data": ["data"],
+      "@hooks": ["hooks"],
+      "@styles": ["styles"],
+      "@types": ["types"],
+      "@utils/*": ["utils/*"]
+    }
+  }
+}
