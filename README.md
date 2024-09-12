@@ -1,23 +1,15 @@
-# opendatasicilia.it
+# Il nuovo sito di ODS
 
-> [!NOTE]
->La nuova versione del sito di ODS è in fase di sviluppo. Si sta sfruttando Gatsby: un framework React-based.
+> [!TIP]
+> Stiamo lavorando a una nuova versione del sito [opendatasicilia.it](https://opendatasicilia.it). Attualmente questo branch è vuoto perchè stiamo sfruttando il branch `dev`. Lì troverai tutti i dettagli sullo sviluppo
 
-## Link utili
+### 🔗 Link utili
+- [[design] prototipo navigabile](https://www.figma.com/proto/SwIT4HO218xnKOAkYK5rW6?node-id=1-3&t=MLLpCqtvGllDKLMk-6)
+- [[sviluppo] prototipo (web)](http://dev.opendatasicilia.it/)
+
+### Vuoi contribuire?
 - [discussioni](https://github.com/opendatasicilia/opendatasicilia.it/discussions)
 - [issue](https://github.com/opendatasicilia/opendatasicilia.it/issues)
 - [progetto](https://github.com/orgs/opendatasicilia/projects/3/views/9)
-- [[design] prototipo navigabile](https://www.figma.com/proto/SwIT4HO218xnKOAkYK5rW6?node-id=1-3&t=MLLpCqtvGllDKLMk-6)
 
-## Sviluppo locale
-- Clonare il repository
-- Installare Node, e gatsby-cli come illustrato [qui](https://github.com/opendatasicilia/opendatasicilia.it/discussions/29)
-- Lanciare il comando `yarn` per scaricare le dipendenze
-- Lanciamo il comando `yarn start`
 
-## GitHub Pages
-- Lanciare `cp .env.development .env.production`
-- Lanciare `yarn deploy`
-
-## URL
-https://dev.opendatasicilia.it
