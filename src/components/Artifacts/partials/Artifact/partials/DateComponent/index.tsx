@@ -1,8 +1,5 @@
 import React from "react";
 
-import { format } from "date-fns";
-import { it } from "date-fns/locale";
-
 import {
   IoCalendarNumberOutline as CalendarIcon,
   IoPencil as PencilIcon,
@@ -21,17 +18,10 @@ export const DateComponent = ({ date, type }: DateComponentProps) => {
       <PencilIcon className={className} />
     );
 
-  const convertDate = (date: string) => {
-    const dateObj = new Date(date);
-    return isNaN(dateObj.getTime())
-      ? "Invalid date"
-      : format(dateObj, "dd/MM/yyyy", { locale: it });
-  };
-
   return (
     <div className="d-flex align-items-center ms-2 bg-gray badge">
       <Icon className="me-1 text-black" />
-      <small className="text-muted">{convertDate(date)}</small>
+      <small className="text-muted">{date}</small>
     </div>
   );
 };

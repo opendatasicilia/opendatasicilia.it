@@ -32,8 +32,8 @@ export const query = graphql`
         has_header
         # thumbnail
         tools
-        created
-        edited
+        created(formatString: "DD/MM/YYYY")
+        edited(formatString: "DD/MM/YYYY")
         status
         source {
           title
