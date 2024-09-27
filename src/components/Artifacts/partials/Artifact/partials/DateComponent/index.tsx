@@ -1,5 +1,8 @@
 import React from "react";
 
+import { format } from "date-fns";
+import { it } from "date-fns/locale";
+
 import {
   IoCalendarNumberOutline as CalendarIcon,
   IoPencil as PencilIcon,
@@ -20,11 +23,9 @@ export const DateComponent = ({ date, type }: DateComponentProps) => {
 
   const convertDate = (date: string) => {
     const dateObj = new Date(date);
-    return dateObj.toLocaleDateString("it-IT", {
-      year: "numeric",
-      month: "numeric",
-      day: "numeric",
-    });
+    return isNaN(dateObj.getTime())
+      ? "Invalid date"
+      : format(dateObj, "dd/MM/yyyy", { locale: it });
   };
 
   return (
