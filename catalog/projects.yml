@@ -1,0 +1,9 @@
+- name: project-emergenza-idrica
+  title: Emergenza idrica
+  type: project
+  status: ongoing
+  created: 2024-04-06
+  description: Emergenza idrica in Sicilia. Raccogliamo dati, dashboard e avvisi dei gestori idrici. Facciamo un po' di advocacy.
+  repository: opendatasicilia/emergenza-idrica-sicilia
+  linked-to-artifacts:
+    - site-emergenza-idrica

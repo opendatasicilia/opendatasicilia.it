@@ -89,5 +89,18 @@ module.exports = {
           })),
       },
     },
+    {
+      resolve: `gatsby-transformer-yaml`,
+      options: {
+        typeName: `Artifacts`,
+      },
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: `catalog`,
+        path: `${__dirname}/catalog/`,
+      },
+    },
   ],
 };
