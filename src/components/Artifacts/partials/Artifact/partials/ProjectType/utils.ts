@@ -1,17 +1,16 @@
 export const getColor = (type: string) => {
   switch (type) {
     case "project":
-      return "bg-dark";
+    case "site":
+      return "text-white bg-primary";
     case "dataset":
-      return "bg-primary";
+      return "text-white bg-dark";
     case "map":
     case "table":
     case "chart":
     case "dashboard":
-      return "bg-secondary";
-    case "site":
-      return "bg-info";
+      return "text-black bg-thirdiary";
     default:
-      return "bg-primary";
+      return "text-white bg-primary";
   }
 };

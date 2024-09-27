@@ -1,5 +1,8 @@
 import React, { ReactNode } from "react";
 import "@fontsource/titillium-web";
+
+import "../../styles/main.scss";
+
 import { Helmet } from "react-helmet";
 import { Header } from "./partials/Header";
 import { Footer } from "./partials/Footer";
@@ -16,12 +19,6 @@ export const Layout = ({ children, title }: LayoutProps) => (
       <title>
         {title ? title + " | Open Data Sicilia" : "Open Data Sicilia"}
       </title>
-      <script
-        src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js"
-        integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D"
-        crossOrigin="anonymous"
-        async
-      ></script>
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link
         rel="preconnect"

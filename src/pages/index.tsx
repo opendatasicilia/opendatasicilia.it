@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, graphql } from "gatsby";
+import { Link, graphql, withPrefix } from "gatsby";
 import { Layout, Blog } from "@components";
 import { cards } from "@data";
 import { getLorem } from "@utils/helpers";

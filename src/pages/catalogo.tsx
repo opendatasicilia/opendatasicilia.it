@@ -8,7 +8,7 @@ export default function CatalogoPage({ data }: { data: AllArtifacts }) {
   return (
     <Layout title="Catalogo">
       <div className="container">
-        <h1 className="fw-bold">Catalogo</h1>
+        <h1 className="fw-bold mb-3">Catalogo</h1>
         <Artifacts artifacts={artifacts} />
       </div>
     </Layout>
