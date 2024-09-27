@@ -42,6 +42,7 @@
     "gh-pages": "^6.1.1",
     "hamburger-react": "^2.4.1",
     "js-yaml": "^4.1.0",
+    "masonry-layout": "^4.2.2",
     "react": "^18.3.1",
     "react-bootstrap": "^2.0.3",
     "react-dom": "^18.3.1",
@@ -54,6 +55,7 @@
   "devDependencies": {
     "@babel/core": "^7.12.3",
     "@types/js-yaml": "^4.0.9",
+    "@types/masonry-layout": "^4.2.8",
     "@types/node": "^22.5.1",
     "@types/react": "^18.3.5",
     "@types/react-dom": "^18.3.0",
