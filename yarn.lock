@@ -1193,6 +1193,11 @@
   dependencies:
     heap ">= 0.2.0"
 
+"@fontsource/titillium-web@^5.1.0":
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/@fontsource/titillium-web/-/titillium-web-5.1.0.tgz#1b387c769afb0e6ab9575dd53fd4b47ebca6633b"
+  integrity sha512-nPlPyuRjmZYwvWJ647mkqlhuPS1P8MuizYUgBLHcn9vzliZTS0DTIkwV550zQV4XqQrWf7YtkDbbnTFCuiWgsA==
+
 "@gatsbyjs/parcel-namer-relative-to-cwd@^2.13.1":
   version "2.13.1"
   resolved "https://registry.yarnpkg.com/@gatsbyjs/parcel-namer-relative-to-cwd/-/parcel-namer-relative-to-cwd-2.13.1.tgz#79d2692330a942394200c9bf3e820a4e55075ffb"

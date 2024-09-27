@@ -73,6 +73,43 @@ interface BlogPostProps {
   post: WpPost;
 }
 
+export type ArtifactType = {
+  name: string;
+  title: string;
+  description: string;
+  type: string;
+  url: string;
+  iframe: string;
+  resource: {
+    name: string;
+    position: string;
+  };
+  has_header: boolean;
+  // thumbnail: any;
+  tools: string;
+  created: string;
+  edited: string;
+  status: string;
+  source: {
+    title: string;
+    url: string;
+  };
+  data: {
+    dataset: string;
+    file: string;
+  };
+  blog_post_url: string;
+  linked_to_artifacts: string;
+  contributors: string;
+  repository: string;
+};
+
+interface AllArtifacts {
+  allArtifacts: {
+    nodes: ArtifactType[];
+  };
+}
+
 export {
   WpPost,
   WpCategory,
@@ -84,4 +121,5 @@ export {
   GraphQLResult,
   TemplateProps,
   BlogPostProps,
+  AllArtifacts,
 };

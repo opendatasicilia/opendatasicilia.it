@@ -1,3 +1,5 @@
+@import "bootstrap/dist/css/bootstrap.min.css";
+
 h1,
 h2,
 h3,
@@ -6,8 +8,13 @@ h5,
 h6,
 .subtitle,
 .menu-item {
-  font-family: "Josefin Sans", sans-serif;
+  font-family: "Titillium Web", sans-serif;
   color: #3f3d56;
+}
+
+iframe {
+  width: 1280px;
+  max-width: 100%;
 }
 
 p,
