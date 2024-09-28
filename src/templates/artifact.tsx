@@ -1,6 +1,17 @@
 import React from "react";
 import { graphql } from "gatsby";
 import { Layout } from "@components";
+import { ArtifactType } from "@types";
+import {
+  ApiDetail,
+  ChartDetail,
+  DashboardDetail,
+  DatasetDetail,
+  MapDetail,
+  ProjectDetail,
+  SiteDetail,
+  TableDetail,
+} from "../components/Artifacts/partials/Artifact/ArtifactDetail";
 
 export default function Artifact({ data }: { data: any }) {
   const artifact = data.allArtifacts.nodes[0];
@@ -9,13 +20,40 @@ export default function Artifact({ data }: { data: any }) {
     if (typeof window !== "undefined") window.history.back();
   };
 
+  const renderComponent = (type: ArtifactType["type"]) => {
+    switch (type) {
+      case "project":
+        return <ProjectDetail artifact={artifact} />;
+      case "dataset":
+        return <DatasetDetail artifact={artifact} />;
+      case "site":
+        return <SiteDetail artifact={artifact} />;
+      case "api":
+        return <ApiDetail artifact={artifact} />;
+      case "chart":
+        return <ChartDetail artifact={artifact} />;
+      case "map":
+        return <MapDetail artifact={artifact} />;
+      case "table":
+        return <TableDetail artifact={artifact} />;
+      case "dashboard":
+        return <DashboardDetail artifact={artifact} />;
+      default:
+        return <div></div>;
+    }
+  };
+
+  const BackBtn = () => (
+    <div className="btn border" onClick={goBack}>
+      &lt;
+    </div>
+  );
+
   return (
     <Layout title={artifact.title}>
       <div className="container mb-5">
-        <pre>{JSON.stringify(artifact, null, 2)}</pre>
-        <button className="btn w-25 border" onClick={goBack}>
-          &lt;
-        </button>
+        <BackBtn />
+        {renderComponent(artifact.type)}
       </div>
     </Layout>
   );

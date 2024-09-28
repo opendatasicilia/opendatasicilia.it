@@ -73,11 +73,15 @@ interface BlogPostProps {
   post: WpPost;
 }
 
+type IArtifactType = "project" | "dataset" | "site" | "api";
+
+type IDatavizType = "chart" | "map" | "table" | "dashboard";
+
 export type ArtifactType = {
   name: string;
   title: string;
   description: string;
-  type: string;
+  type: IArtifactType | IDatavizType;
   url: string;
   iframe: string;
   resource: {

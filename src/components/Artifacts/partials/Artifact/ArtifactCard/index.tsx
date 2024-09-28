@@ -6,7 +6,7 @@ import { Link } from "gatsby";
 import { ProjectIcon } from "./partials/ProjectIcon";
 import { MdOutlineRemoveRedEye } from "react-icons/md";
 
-export const Artifact = ({ artifact }: { artifact: ArtifactType }) => {
+export const ArtifactCard = ({ artifact }: { artifact: ArtifactType }) => {
   const href = `/${artifact.type}/${artifact.name}`;
 
   return (

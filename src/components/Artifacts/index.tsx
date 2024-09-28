@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { ArtifactType } from "@types";
-import { Artifact } from "./partials/Artifact";
+import { ArtifactCard } from "./partials/Artifact";
 import { IS_BROWSER } from "@utils/helpers";
 
 type ArtifactProps = {
@@ -35,7 +35,7 @@ export const Artifacts = ({ artifacts }: ArtifactProps) => {
       {artifacts.map((artifact, index) => (
         <div className="col-lg-4 col-md-6 col-sm-12 mb-4" key={index}>
           <div className="card p-3">
-            <Artifact artifact={artifact} />
+            <ArtifactCard artifact={artifact} />
           </div>
         </div>
       ))}

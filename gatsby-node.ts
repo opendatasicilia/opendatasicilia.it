@@ -166,6 +166,7 @@ const createArtifacts = async (
       component: path.resolve(`./src/templates/artifact.tsx`),
       context: {
         name: node.name,
+        type: node.type,
       },
     });
   });
