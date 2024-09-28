@@ -1,9 +1,7 @@
 import React from "react";
 
-import {
-  IoCalendarNumberOutline as CalendarIcon,
-  IoPencil as PencilIcon,
-} from "react-icons/io5";
+import created_icon from "@assets/icons/artifacts/created_icon.svg";
+import edited_icon from "@assets/icons/artifacts/edited_icon.svg";
 
 interface DateComponentProps {
   date: string;
@@ -13,14 +11,13 @@ interface DateComponentProps {
 export const DateComponent = ({ date, type }: DateComponentProps) => {
   const Icon = ({ className }: { className: string }) =>
     type === "created" ? (
-      <CalendarIcon className={className} />
+      <img src={created_icon} alt="created" className={className} />
     ) : (
-      <PencilIcon className={className} />
+      <img src={edited_icon} alt="edited" className={className} />
     );
-
   return (
     <div className="d-flex align-items-center ms-2 bg-gray badge">
-      <Icon className="me-1 text-black" />
+      <Icon className="me-1 text-black icon" />
       <small className="text-muted">{date}</small>
     </div>
   );

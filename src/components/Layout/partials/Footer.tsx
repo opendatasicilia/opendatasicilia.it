@@ -1,15 +1,15 @@
 import React from "react";
-import Logo from "@assets/images/ods-logo-dennis-v1.svg";
+import Logo from "@assets/logos/ods-logo-dennis-v1.svg";
 import { menu, socials } from "@data";
 import { Link } from "gatsby";
 
 export const Footer = () => {
   return (
     <footer className="bg-dark py-4">
-      <div className="container-fluid mx-auto">
+      <div className="container mx-auto">
         <div className="row align-items-center text-center text-lg-start">
           <div className="col-lg-4 mb-3 mb-lg-0">
-            <div className="d-flex justify-content-center">
+            <div className="d-flex justify-content-center justify-content-lg-start">
               <GreenBar />
               <LogoComponent />
             </div>
