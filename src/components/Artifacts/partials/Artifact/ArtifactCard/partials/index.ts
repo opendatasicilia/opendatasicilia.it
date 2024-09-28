@@ -1,4 +1,4 @@
-import { ProjectType } from "./ProjectType";
+import { ProjectTypeLabel } from "./ProjectTypeLabel";
 import { DateComponent } from "./DateComponent";
 
-export { ProjectType, DateComponent };
+export { ProjectTypeLabel, DateComponent };

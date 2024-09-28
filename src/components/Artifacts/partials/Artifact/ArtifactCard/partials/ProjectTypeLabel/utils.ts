@@ -1,4 +1,6 @@
-export const getColor = (type: string) => {
+import { ArtifactType } from "@types";
+
+export const getColor = (type: ArtifactType["type"]) => {
   switch (type) {
     case "project":
     case "site":

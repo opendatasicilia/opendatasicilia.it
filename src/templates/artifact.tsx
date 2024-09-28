@@ -12,13 +12,11 @@ import {
   SiteDetail,
   TableDetail,
 } from "../components/Artifacts/partials/Artifact/ArtifactDetail";
+import { ProjectTypeLabel } from "../components/Artifacts/partials/Artifact/ArtifactCard/partials";
+import { Contributors } from "../components/Artifacts/partials/Artifact/ArtifactDetail/partials/Contributors";
 
 export default function Artifact({ data }: { data: any }) {
   const artifact = data.allArtifacts.nodes[0];
-
-  const goBack = () => {
-    if (typeof window !== "undefined") window.history.back();
-  };
 
   const renderComponent = (type: ArtifactType["type"]) => {
     switch (type) {
@@ -43,17 +41,18 @@ export default function Artifact({ data }: { data: any }) {
     }
   };
 
-  const BackBtn = () => (
-    <div className="btn border" onClick={goBack}>
-      &lt;
-    </div>
-  );
-
   return (
     <Layout title={artifact.title}>
       <div className="container mb-5">
-        <BackBtn />
-        {renderComponent(artifact.type)}
+        <ProjectTypeLabel type={artifact.type} />
+        <div className="mt-3">
+          <h1>{artifact.title}</h1>
+          <p>{artifact.description}</p>
+        </div>
+        {artifact.contributors && (
+          <Contributors contributors={artifact.contributors} />
+        )}
+        {/* <div className="mt-3">{renderComponent(artifact.type)}</div> */}
       </div>
     </Layout>
   );

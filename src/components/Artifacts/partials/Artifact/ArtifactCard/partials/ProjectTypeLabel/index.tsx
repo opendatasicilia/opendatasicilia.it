@@ -1,7 +1,8 @@
 import React from "react";
 import { getColor } from "./utils";
+import { ArtifactType } from "@types";
 
-export const ProjectType = ({ type }: { type: string }) => {
+export const ProjectTypeLabel = ({ type }: { type: ArtifactType["type"] }) => {
   const color = getColor(type);
   return (
     <div>

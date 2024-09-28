@@ -1,6 +1,6 @@
 import React from "react";
 import { ArtifactType } from "@types";
-import { ProjectType, DateComponent } from "./partials";
+import { ProjectTypeLabel, DateComponent } from "./partials";
 import { Link } from "gatsby";
 
 import { ProjectIcon } from "./partials/ProjectIcon";
@@ -17,7 +17,7 @@ export const ArtifactCard = ({ artifact }: { artifact: ArtifactType }) => {
       <div className="col">
         <h2 className="h4 fw-bold m-0">{artifact.title}</h2>
         <div className="d-flex mt-2">
-          <ProjectType type={artifact.type} />
+          <ProjectTypeLabel type={artifact.type} />
           {artifact.created && (
             <DateComponent date={artifact.created} type="created" />
           )}
@@ -29,12 +29,14 @@ export const ArtifactCard = ({ artifact }: { artifact: ArtifactType }) => {
           <p>{artifact.description}</p>
         </div>
         <div>
+          <pre>{JSON.stringify(artifact, null, 2)}</pre>
+        </div>
+        <div>
           <Link className="text-dark fw-bold" to={href}>
             <span>Anteprima</span>
           </Link>
           <MdOutlineRemoveRedEye className="ms-1" />
         </div>
-        {/* <pre>{JSON.stringify(artifact, null, 2)}</pre> */}
       </div>
     </div>
   );

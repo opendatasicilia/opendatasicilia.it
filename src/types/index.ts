@@ -104,7 +104,7 @@ export type ArtifactType = {
   };
   blog_post_url: string;
   linked_to_artifacts: string;
-  contributors: string;
+  contributors: string[];
   repository: string;
 };
 
