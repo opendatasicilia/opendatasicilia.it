@@ -38,14 +38,17 @@ module.exports = {
         background_color: "#f7f0eb",
         theme_color: "#006d77",
         display: "standalone",
-        icon: "src/assets/images/opendatasicilia-logo.png",
+        icon: "src/assets/logos/opendatasicilia-logo.png",
       },
     },
     "gatsby-plugin-react-helmet",
     "gatsby-transformer-sharp",
     "gatsby-plugin-sharp",
     "gatsby-plugin-no-sourcemaps",
-    "gatsby-plugin-sass",
+    {
+      resolve: `gatsby-plugin-sass`,
+      options: { implementation: require("sass") },
+    },
     {
       resolve: "gatsby-plugin-local-search",
       options: {
