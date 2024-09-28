@@ -4,6 +4,7 @@ import { ProjectType, DateComponent } from "./partials";
 import { Link } from "gatsby";
 
 import { ProjectIcon } from "./partials/ProjectIcon";
+import { MdOutlineRemoveRedEye } from "react-icons/md";
 
 export const Artifact = ({ artifact }: { artifact: ArtifactType }) => {
   const href = `/${artifact.type}/${artifact.name}`;
@@ -28,7 +29,10 @@ export const Artifact = ({ artifact }: { artifact: ArtifactType }) => {
           <p>{artifact.description}</p>
         </div>
         <div>
-          <Link to={href}>Dettagli</Link>
+          <Link className="text-dark fw-bold" to={href}>
+            <span>Anteprima</span>
+          </Link>
+          <MdOutlineRemoveRedEye className="ms-1" />
         </div>
         {/* <pre>{JSON.stringify(artifact, null, 2)}</pre> */}
       </div>
