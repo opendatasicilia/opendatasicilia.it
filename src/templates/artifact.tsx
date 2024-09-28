@@ -14,6 +14,7 @@ import {
 } from "../components/Artifacts/partials/Artifact/ArtifactDetail";
 import { ProjectTypeLabel } from "../components/Artifacts/partials/Artifact/ArtifactCard/partials";
 import { Contributors } from "../components/Artifacts/partials/Artifact/ArtifactDetail/partials/Contributors";
+import { getLorem } from "@utils/helpers";
 
 export default function Artifact({ data }: { data: any }) {
   const artifact = data.allArtifacts.nodes[0];
@@ -45,9 +46,17 @@ export default function Artifact({ data }: { data: any }) {
     <Layout title={artifact.title}>
       <div className="container mb-5">
         <ProjectTypeLabel type={artifact.type} />
-        <div className="mt-3">
-          <h1>{artifact.title}</h1>
-          <p>{artifact.description}</p>
+        <div className="row mt-3">
+          <div className="col-12 col-lg-9">
+            <h1 className="fw-bold">{artifact.title}</h1>
+            <p>{artifact.description ?? getLorem()}</p>
+          </div>
+          {/* <div className="col-12 col-lg-3 align-self-center">
+            <div style={{ height: "150px" }} className="card p-3"></div>
+          </div> */}
+        </div>
+        <div className="card p-2 mt-3">
+          <pre>{JSON.stringify(artifact, null, 2)}</pre>
         </div>
         {artifact.contributors && (
           <Contributors contributors={artifact.contributors} />

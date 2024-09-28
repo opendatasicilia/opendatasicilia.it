@@ -29,9 +29,6 @@ export const ArtifactCard = ({ artifact }: { artifact: ArtifactType }) => {
           <p>{artifact.description}</p>
         </div>
         <div>
-          <pre>{JSON.stringify(artifact, null, 2)}</pre>
-        </div>
-        <div>
           <Link className="text-dark fw-bold" to={href}>
             <span>Anteprima</span>
           </Link>
