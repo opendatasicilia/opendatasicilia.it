@@ -43,6 +43,10 @@ export const menu = [
     name: "Progetti",
     url: "/progetti",
   },
+  {
+    name: "Catalogo",
+    url: "/catalogo",
+  },
 ];
 
 export const socials = [

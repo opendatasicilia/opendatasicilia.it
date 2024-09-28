@@ -1,6 +1,13 @@
 import path from "path";
 import { CreatePagesArgs } from "gatsby";
-import { GraphQLResult, WpCategory, WpPost, WpTag, WpUser } from "./src/types";
+import {
+  ArtifactType,
+  GraphQLResult,
+  WpCategory,
+  WpPost,
+  WpTag,
+  WpUser,
+} from "./src/types";
 
 const createPosts = async (
   graphql: CreatePagesArgs["graphql"],
@@ -132,6 +139,39 @@ const createAuthors = async (
   });
 };
 
+const createArtifacts = async (
+  graphql: CreatePagesArgs["graphql"],
+  createPage: Function
+) => {
+  const result: GraphQLResult<{ allArtifacts: { nodes: ArtifactType[] } }> =
+    await graphql(`
+      query {
+        allArtifacts {
+          nodes {
+            name
+            type
+          }
+        }
+      }
+    `);
+
+  if (result.errors) {
+    throw result.errors;
+  }
+
+  const artifacts = result.data!.allArtifacts.nodes;
+  artifacts.forEach((node) => {
+    createPage({
+      path: `${node.type}/${node.name}`,
+      component: path.resolve(`./src/templates/artifact.tsx`),
+      context: {
+        name: node.name,
+        type: node.type,
+      },
+    });
+  });
+};
+
 exports.createPages = async ({ graphql, actions }: CreatePagesArgs) => {
   const { createPage } = actions;
 
@@ -141,6 +181,7 @@ exports.createPages = async ({ graphql, actions }: CreatePagesArgs) => {
       createCategories(graphql, createPage),
       createTags(graphql, createPage),
       createAuthors(graphql, createPage),
+      createArtifacts(graphql, createPage),
     ]);
   } catch (error) {
     console.error("Error creating pages: ", error);

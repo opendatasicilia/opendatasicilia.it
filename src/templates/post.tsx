@@ -7,6 +7,7 @@ import { it } from "date-fns/locale";
 import { BiComment as CommentIcon } from "react-icons/bi";
 import { TemplateProps, WpTag } from "@types";
 import { getReadingTime } from "@utils/helpers";
+import { Badge } from "../components/Ui/Badge";
 
 export default function Post({ data }: TemplateProps) {
   const post = data.allWpPost.nodes[0];
@@ -49,18 +50,9 @@ export default function Post({ data }: TemplateProps) {
           <div className="d-flex justify-content-between pt-2">
             <span>
               {post.tags.nodes.map((tag: WpTag, i: number) => (
-                <div
-                  className="d-inline rounded-4 me-2"
-                  style={{
-                    padding: "5px 15px 5px 15px",
-                    backgroundColor: "#f6f3d4",
-                  }}
-                  key={i}
-                >
-                  <Link style={{ color: "black" }} to={`/tag/${tag.slug}`}>
-                    {tag.name}
-                  </Link>
-                </div>
+                <React.Fragment key={i}>
+                  <Badge name={tag.name} slug={tag.slug} />
+                </React.Fragment>
               ))}
             </span>
             <span>{getReadingTime(post.content)} min</span>

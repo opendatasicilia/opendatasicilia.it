@@ -1,4 +1,8 @@
 import React, { ReactNode } from "react";
+import "@fontsource/titillium-web";
+
+import "../../styles/main.scss";
+
 import { Helmet } from "react-helmet";
 import { Header } from "./partials/Header";
 import { Footer } from "./partials/Footer";

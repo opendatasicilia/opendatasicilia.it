@@ -1,0 +1,18 @@
+- name: site-emergenza-idrica
+  title: Emergenza idrica
+  type: site
+  tools:
+    - Material for MkDocs
+    - GitHub Pages
+  created: 2024-04-06
+  url: https://opendatasicilia.github.io/emergenza-idrica-sicilia/
+  repository: opendatasicilia/emergenza-idrica-sicilia
+  description: Sito tematico osservatorio sull'emergenza idrica Siciliana. Raccogliamo dati, dashboard e avvisi dei gestori idrici.
+  status: alive
+  contributors: #fetch from repo?
+    - Ciro Spataro
+    - Andrea Borruso
+    - Giovan Battista Vitrano
+    - Salvatore Fiandaca
+    - Dennis Angemi
+    - Stefano Borzì

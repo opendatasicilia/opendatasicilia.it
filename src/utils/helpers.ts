@@ -18,3 +18,5 @@ export const getLorem = () =>
 const wordCount = (str: string) => str.split(" ").length;
 
 export const getReadingTime = (str: string) => Math.round(wordCount(str) / 225);
+
+export const IS_BROWSER = typeof window !== "undefined";

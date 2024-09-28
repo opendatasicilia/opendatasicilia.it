@@ -5,7 +5,7 @@ import { RiSearchLine, RiCloseFill } from "react-icons/ri";
 import { Search } from "@components";
 import { menu } from "@data";
 
-import Logo from "@assets/images/opendatasicilia-logo.svg";
+import Logo from "@assets/logos/opendatasicilia-logo.svg";
 
 export const Header = () => {
   const [isOpen, setOpen] = useState(false);
