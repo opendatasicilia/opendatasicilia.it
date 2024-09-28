@@ -45,7 +45,7 @@ export default function Artifact({ data }: { data: any }) {
   return (
     <Layout title={artifact.title}>
       <div className="container mb-5">
-        <ProjectTypeLabel type={artifact.type} />
+        <ProjectTypeLabel type={artifact.type} size="lg" />
         <div className="row mt-3">
           <div className="col-12 col-lg-9">
             <h1 className="fw-bold">{artifact.title}</h1>
